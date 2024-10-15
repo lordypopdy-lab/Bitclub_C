@@ -39,7 +39,7 @@ const Earn = () => {
         //////////////''''''''//////////TOKEN FETCHER////////////''''''''//////////////
         const fetcher = async () => {
             try {
-                const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
+                const response = await fetch('https://api.coingecko.com/v3/coins/markets?vs_currency=usd');
                 const datas = await response.json();
                 if (datas.length > 0) {
                     localStorage.setItem('tokens', JSON.stringify(datas));
@@ -179,7 +179,7 @@ const Earn = () => {
 
     const e = localStorage.getItem('email');
     if (!e) {
-        location.href = '/api/login';
+        location.href = '/login';
     }
 
     const changeFunction = (e) => {
@@ -229,13 +229,13 @@ const Earn = () => {
     const toContractOne = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('/api/getContractOne', { email });
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractOne', { email });
             if (data.success && data.contractOne.status !== 'Paused') {
                 setLoading(false);
-                location.href = '/api/ContractOneProfile'
+                location.href = '/ContractOneProfile'
             } else {
                 setLoading(false);
-                location.href = '/api/ContractOne'
+                location.href = '/ContractOne'
             }
         } catch (error) {
             setLoading(false);
@@ -246,13 +246,13 @@ const Earn = () => {
     const toContractTwo = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('/api/getContractTwo', { email });
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractTwo', { email });
             if (data.success) {
               setLoading(false);
-              location.href = '/api/ContractTwoProfile'
+              location.href = '/ContractTwoProfile'
             } else {
               setLoading(false);
-              location.href = '/api/ContractTwo'
+              location.href = '/ContractTwo'
             }
           } catch (error) {
             setLoading(false);
@@ -265,7 +265,7 @@ const Earn = () => {
 
             {/* <!-- preloade --> */}
             <div className="preload preload-container">
-                <div className="preload-logo" style={{ backgroundImage: `url('/api/src/images/logo/144.png')` }}>
+                <div className="preload-logo" style={{ backgroundImage: `url('/src/images/logo/144.png')` }}>
                     <div className="spinner"></div>
                 </div>
             </div>

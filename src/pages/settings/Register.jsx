@@ -25,7 +25,7 @@ const Register = () => {
         setLoading(true)
         const { name, email, password, comfirmPassword } = data;
         try {
-            const { data } = await axios.post('/api/register', {
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/register', {
                 name, email, password, comfirmPassword
             })
             if (data.error) {
@@ -62,7 +62,7 @@ const Register = () => {
 
         try {
             if (email_verified) {
-                const { data } = await axios.post('/api/loginGoogle', { email, name, picture });
+                const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
                 if (data) {
                     toast.success("Login Successfully, Welcome!");
                     setLoading(false)

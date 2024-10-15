@@ -7,7 +7,7 @@ export function TokenContextProvider({ children }) {
     useEffect(() => {
         try {
             if (!tokens) {
-                axios.get('/tokens').then(({ data }) => {
+                axios.get('https://bitclubs4-8hol7zph.b4a.run/tokens').then(({ data }) => {
                     setToken(data);
                 })
             }

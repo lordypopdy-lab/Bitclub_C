@@ -59,10 +59,6 @@ import WithdrawContractTwo from './pages/TRX/WithdrawContractTwo';
 import WithdrawContractOne from './pages/TRX/WithdrawContractOne';
 import ContractTwoProfile from './pages/account/ContractTwoProfile';
 
-// import axios from 'axios';
-// axios.defaults.baseURL = 'https://bitclubs4-8hol7zph.b4a.run/';
-// axios.defaults.withCredentials = true;
-
 import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { UserContextProvider } from '../context/UserContext';

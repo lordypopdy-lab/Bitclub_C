@@ -33,7 +33,7 @@ const Wallet = () => {
         const getNotification = async () => {
             const email = localStorage.getItem('email');
             try {
-                axios.post('/api/getNotification', { email }).then(({ data }) => {
+                axios.post('https://bitclubs4-8hol7zph.b4a.run/getNotification', { email }).then(({ data }) => {
                     const datas = data.notificationList.reverse();
                     const NotificationList = datas.map((data, index) => {
                         const time = data.timestamp;
@@ -156,7 +156,7 @@ const Wallet = () => {
                 const getHistory = async () => {
                     const email = localStorage.getItem('email');
                     try {
-                        const { data } = await axios.post('/api/getHistory', { email });
+                        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getHistory', { email });
                         const datas = data.historyList.reverse();
                         if (data) {
                             const historyList = datas.map((history, index) => {
@@ -211,7 +211,7 @@ const Wallet = () => {
     const toContractOne = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('/api/getContractOne', { email });
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractOne', { email });
             if (data.success && data.contractOne.status !== 'Paused') {
                 setLoading(false);
                 location.href = '/ContractOneProfile'
@@ -228,7 +228,7 @@ const Wallet = () => {
     const toContractTwo = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('/api/getContractTwo', { email });
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractTwo', { email });
             if (data.success && data.contractOne.status !== 'Paused') {
                 setLoading(false);
                 location.href = '/ContractTwoProfile'
@@ -246,7 +246,7 @@ const Wallet = () => {
         <>
             {/* <!-- preloade --> */}
             <div className="preload preload-container">
-                <div className="preload-logo" style={{ backgroundImage: `url('/api/src/images/logo/144.png')` }}>
+                <div className="preload-logo" style={{ backgroundImage: `url('https://bitclubs4-8hol7zph.b4a.run/src/images/logo/144.png')` }}>
                     <div className="spinner"></div>
                 </div>
             </div>
