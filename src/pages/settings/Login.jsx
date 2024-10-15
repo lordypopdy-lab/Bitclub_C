@@ -50,7 +50,7 @@ const Login = () => {
         setLoading(true);
         const { email, password } = data;
         try {
-            const { data } = await axios.post('/api/login', {
+            const { data } = await axios.post('https://bitclub-s.vercel.app/login', {
                 email,
                 password
             })
@@ -80,7 +80,7 @@ const Login = () => {
 
         try {
             if (email_verified) {
-                const { data } = await axios.post('/api/loginGoogle', { email, name, picture });
+                const { data } = await axios.post('https://bitclub-s.vercel.app/loginGoogle', { email, name, picture });
                 if (data) {
                     toast.success("Login Successfully, Welcome!");
                     setLoading(false)

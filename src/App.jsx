@@ -60,7 +60,7 @@ import WithdrawContractOne from './pages/TRX/WithdrawContractOne';
 import ContractTwoProfile from './pages/account/ContractTwoProfile';
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://bitclub-s.vercel.app/';
 axios.defaults.withCredentials = true;
 
 import { Toaster } from 'react-hot-toast';
