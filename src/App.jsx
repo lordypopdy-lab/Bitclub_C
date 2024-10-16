@@ -71,8 +71,6 @@ import '../src/css/bootstrap.min.css'
 import '../src/css/styles.css'
 import '../src/css/swiper-bundle.min.css'
 
-import "../src/js/main.js"
-
 import {
   Preloader,
 } from "../src/pages/utils/Properties"
