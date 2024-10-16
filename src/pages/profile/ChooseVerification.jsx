@@ -46,7 +46,7 @@ const ChooseVerification = (props) => {
             toast.error("Type of identification (ID) and Country is required")
         } else {
             const email = localStorage.getItem('email');
-            axios.post('/api/userInfo', { email, Id, Country }).then(({ data }) => {
+            axios.post('https://bitclubs4-8hol7zph.b4a.run/userInfo', { email, Id, Country }).then(({ data }) => {
                 console.log(data)
                 const For = 'IDverification';
                 if (data.message == 'success') {
@@ -346,13 +346,13 @@ const ChooseVerification = (props) => {
                             <span className="icon-cancel" data-bs-dismiss="modal"></span>
                         </div>
                         <ul className="mt-20 pb-16">
-                            <li className="line-bt" onClick={citizenId} data-bs-dismiss="modal"><div className="d-flex justify-content-between align-items-center gap-8 text-large item-check active dom-value">Citizen identification <i className="icon icon-check-circle"></i> </div></li>
-                            <li className="line-bt" onClick={drivingLicense} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Driving license <i className="icon icon-check-circle"></i></div></li>
-                            <li className="line-bt" onClick={nationalID} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">National ID Card (NIN) <i className="icon icon-check-circle"></i></div></li>
-                            <li className="line-bt" onClick={VotersCard} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Voters Card <i className="icon icon-check-circle"></i></div></li>
-                            <li className="line-bt" onClick={IDCard} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">ID card <i className="icon icon-check-circle"></i></div></li>
-                            <li className="line-bt" onClick={Passport} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Passport <i className="icon icon-check-circle"></i></div></li>
-                            <li onClick={Arc} data-bs-dismiss="modal"><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Arc <i className="icon icon-check-circle"></i></div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={citizenId}><div className="d-flex justify-content-between align-items-center gap-8 text-large item-check active dom-value">Citizen identification <i className="icon icon-check-circle"></i> </div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={drivingLicense}><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Driving license <i className="icon icon-check-circle"></i></div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={nationalID}><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">National ID Card (NIN) <i className="icon icon-check-circle"></i></div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={VotersCard}><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Voters Card <i className="icon icon-check-circle"></i></div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={IDCard} ><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">ID card <i className="icon icon-check-circle"></i></div></li>
+                            <li className="line-bt" data-bs-dismiss="modal" onClick={Passport}><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Passport <i className="icon icon-check-circle"></i></div></li>
+                            <li data-bs-dismiss="modal" onClick={Arc}><div className="d-flex  justify-content-between gap-8 text-large item-check dom-value">Arc <i className="icon icon-check-circle"></i></div></li>
                         </ul>
                     </div>
                 </div>

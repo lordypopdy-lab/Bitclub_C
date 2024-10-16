@@ -27,7 +27,7 @@ const CameraScan = () => {
     const submit = async ()=>{
         const email = localStorage.getItem('email');
         try {
-            axios.post('/api/citizenId', {email, imgSrc}).then(({data})=>{
+            axios.post('https://bitclubs4-8hol7zph.b4a.run/citizenId', {email, imgSrc}).then(({data})=>{
                 if(data.success){
                     location.href = '/CameraSuccess'
                 }else{
