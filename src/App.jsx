@@ -71,12 +71,15 @@ import '../src/css/bootstrap.min.css'
 import '../src/css/styles.css'
 import '../src/css/swiper-bundle.min.css'
 
+import { initializeSwiper } from "../src/js/carousel"
+
 import {
   Preloader,
 } from "../src/pages/utils/Properties"
 
 function App() {
   useEffect(() => {
+    initializeSwiper()
     Preloader();
   }, [])
 
