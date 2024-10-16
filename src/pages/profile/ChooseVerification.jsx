@@ -63,7 +63,6 @@ const ChooseVerification = (props) => {
             })
         }
     }
-    console.log(Id)
     return (
         <>
             <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
