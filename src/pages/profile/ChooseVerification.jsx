@@ -47,14 +47,14 @@ const ChooseVerification = (props) => {
                 console.log(data)
                 const For = 'IDverification';
                 if (data.message == 'success') {
-                    axios.post('notification', { email, For }).then(() => {
+                    axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
                         toast.success("Saved");
                         setTimeout(() => {
                             location.href = '/ChooseIdentity'
                         }, 1000);
                     })
                 } else if (data.message == 'Updated') {
-                    axios.post('notification', { email, For }).then(() => {
+                    axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
                         toast.success('Updated')
                         setTimeout(() => {
                             location.href = '/ChooseIdentity'
