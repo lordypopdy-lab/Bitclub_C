@@ -59,7 +59,9 @@ const Login = () => {
                 toast.success('Login successful. Welcome!');
                 localStorage.setItem('email', email);
                 localStorage.setItem('pin', data._id);
-                location.href = '/Home'
+               setTimeout(()=>{
+                 location.href = '/Home'
+               },1000)
             } else {
                 toast.error(data.error)
                 setLoading(false)
