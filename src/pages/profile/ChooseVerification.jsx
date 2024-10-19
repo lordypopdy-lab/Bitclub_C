@@ -8,6 +8,7 @@ const ChooseVerification = (props) => {
     if (!localStorage.getItem('email')) { location.href = '/login' }
 
     const [Country, setCountry] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [Id, setId] = useState(null);
 
     const citizenId = () => {
