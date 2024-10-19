@@ -4,10 +4,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 
 const ChooseVerification = (props) => {
-    const e = localStorage.getItem('email');
-    if (!e) {
-        location.href = '/login';
-    }
+    if (localStorage.getItem('email')) { location.href = '/login' }
 
     const [Country, setCountry] = useState(null);
     const [Id, setId] = useState(null);
@@ -52,12 +49,16 @@ const ChooseVerification = (props) => {
                 if (data.message == 'success') {
                     axios.post('notification', { email, For }).then(() => {
                         toast.success("Saved");
-                        location.href = '/ChooseIdentity'
+                        setTimeout(() => {
+                            location.href = '/ChooseIdentity'
+                        }, 1000);
                     })
                 } else if (data.message == 'Updated') {
                     axios.post('notification', { email, For }).then(() => {
                         toast.success('Updated')
-                        location.href = '/ChooseIdentity'
+                        setTimeout(() => {
+                            location.href = '/ChooseIdentity'
+                        }, 1000);
                     })
                 }
             })
@@ -329,7 +330,7 @@ const ChooseVerification = (props) => {
                         <fieldset className="mt-20">
                             <label className="mb-8">Type of identification (ID)</label>
                             <div className="select-wrapper" data-bs-toggle="modal" data-bs-target="#identificationID">
-                                <p className="tf-select dom-text">Select ID type</p>
+                                <p className="tf-select dom-text">{Id === null ? "Select ID type" : Id }</p>
                             </div>
                         </fieldset>
                         <button onClick={next} className="tf-btn lg primary mt-40">Next</button>
