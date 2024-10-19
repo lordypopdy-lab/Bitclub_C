@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 
 const ChooseVerification = (props) => {
-    if (localStorage.getItem('email')) { location.href = '/login' }
+    if (!localStorage.getItem('email')) { location.href = '/login' }
 
     const [Country, setCountry] = useState(null);
     const [Id, setId] = useState(null);
