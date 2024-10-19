@@ -77,7 +77,7 @@ const ChooseVerification = (props) => {
                 <h3>Verification</h3>
                 <a href="javascript:void(0);" className="right"><i className="icon-question"></i></a>
             </div>
-            <div className="pt-45 pb-16">
+            <div className="pt-45 mb-3 pb-16">
                 <div className="tf-container">
                     <h4 className="mt-4">Choose the type of identification document</h4>
                     <form className="mt-20">
@@ -336,7 +336,7 @@ const ChooseVerification = (props) => {
                         <fieldset className="mt-20">
                             <label className="mb-8">Type of identification (ID)</label>
                             <div className="select-wrapper" data-bs-toggle="modal" data-bs-target="#identificationID">
-                                <p className="tf-select dom-text">{Id === null ? "Select ID type" : Id }</p>
+                                <p className="tf-select dom-text">{Id === null ? "Select ID type" : Id}</p>
                             </div>
                         </fieldset>
                         <button onClick={next} className="tf-btn lg primary mt-40">Next</button>
@@ -344,11 +344,11 @@ const ChooseVerification = (props) => {
                 </div>
             </div>
             <FadeLoader
-                            color="#36d7b7"
-                            loading={loading}
-                            speedMultiplier={3}
-                            style={{ textAlign: 'center', position: 'relative', marginLeft: '50%' }}
-                        />
+                color="#36d7b7"
+                loading={loading}
+                speedMultiplier={3}
+                style={{ textAlign: 'center', position: 'relative', marginLeft: '50%' }}
+            />
             <div className="modal fade action-sheet" id="identificationID">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
