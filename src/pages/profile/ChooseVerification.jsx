@@ -40,8 +40,10 @@ const ChooseVerification = (props) => {
     }
 
     const next = async (e) => {
+        setLoading(true);
         e.preventDefault();
         if (Id == null || Country == null) {
+            setLoading(false);
             toast.error("Type of identification (ID) and Country is required")
         } else {
             const email = localStorage.getItem('email');
@@ -51,13 +53,15 @@ const ChooseVerification = (props) => {
                 if (data.message == 'success') {
                     axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
                         toast.success("Saved");
+                        setLoading(false);
                         setTimeout(() => {
                             location.href = '/ChooseIdentity'
                         }, 1000);
                     })
                 } else if (data.message == 'Updated') {
                     axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
-                        toast.success('Updated')
+                        toast.success('Updated');
+                        setLoading(false);
                         setTimeout(() => {
                             location.href = '/ChooseIdentity'
                         }, 1000);
