@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import FadeLoader from 'react-spinners/FadeLoader';
 
 const ChooseVerification = (props) => {
     if (!localStorage.getItem('email')) { location.href = '/login' }
@@ -337,7 +338,12 @@ const ChooseVerification = (props) => {
                     </form>
                 </div>
             </div>
-
+            <FadeLoader
+                            color="#36d7b7"
+                            loading={loading}
+                            speedMultiplier={3}
+                            style={{ textAlign: 'center', position: 'relative', marginLeft: '50%' }}
+                        />
             <div className="modal fade action-sheet" id="identificationID">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
