@@ -3,6 +3,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
 
+import logo144 from '../../images/logo/logo144.png'
+
 const Exchange = () => {
     const e = localStorage.getItem('email');
     if (!e) {
@@ -33,7 +35,6 @@ const Exchange = () => {
     useEffect(() => {
         setLoading(true);
 
-         
         //////////////''''''''//////////TOKEN FETCHER////////////''''''''//////////////
         const fetcher = async () => {
             try {
@@ -286,11 +287,11 @@ const Exchange = () => {
 
             {/* <!-- preloade --> */}
             <div className="preload preload-container">
-                <div className="preload-logo" style={{ backgroundImage: `url('/src/images/logo/144.png')` }}>
+                <div className="preload-logo" style={{ backgroundImage: `url(${logo144})` }}>
                     <div className="spinner"></div>
                 </div>
             </div>
-            {/* <!-- /preload -->  */}
+            {/* <!-- /preload End -->  */}
             <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">
                 <h3 className="d-flex gap-12">
                     <a href="#">Market</a>
