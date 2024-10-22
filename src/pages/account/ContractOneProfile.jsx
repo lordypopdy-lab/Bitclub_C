@@ -60,7 +60,7 @@ fetcher();
 
 const pinCheck = async () => {
 const email = localStorage.getItem('email');
-const { data } = await axios.post('/api/pinCheck', { email });
+const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinCheck', { email });
 if (data.exists == true) {
   setCheckPin(true);
 }
@@ -85,7 +85,7 @@ if (window.ethereum) {
   const getCoontractOne = async () => {
     const email = localStorage.getItem('email');
     try {
-      const { data } = await axios.post('/api/getContractOne', { email });
+      const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractOne', { email });
       if (data.success) {
         setTrx({
           to: data.contractOne.to,
@@ -127,7 +127,7 @@ e.preventDefault();
 const email = localStorage.getItem('email');
 const { pin1, pin2, pin3, pin4 } = pinInput;
 
-const { data } = await axios.post('/api/createPin', {
+const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/createPin', {
 pin1, pin2, pin3, pin4, email
 })
 
@@ -160,7 +160,7 @@ if (Address !== '') {
     setPinInput({ ...pinInput, pin1: '', pin2: '', pin3: '', pin4: '' });
   } else {
     const { pin1, pin2, pin3, pin4 } = pinInput;
-    const { data } = await axios.post('/api/pinVerify', {
+    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinVerify', {
       pin1, pin2, pin3, pin4, email
     });
     if (data.success) {
@@ -284,9 +284,9 @@ if (Address !== '') {
         const blockHash = receipt.blockHash;
         const transactionHash = receipt.transactionHash;
 
-        const { data } = await axios.post('/api/getProfitOne', { email, amount });
+        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getProfitOne', { email, amount });
         if (data.success) {
-          const { data } = await axios.post('/api/setContractOneLogs', {
+          const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/setContractOneLogs', {
             name,
             email,
             amount,
@@ -304,7 +304,7 @@ if (Address !== '') {
           const logsData = data;
           if (logsData.success) {
             const For = "ForContractProfitWithdraw";
-            const { data } = await axios.post('/api/notification', {
+            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', {
               For,
               email,
             })
