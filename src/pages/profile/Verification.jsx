@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+if (!localStorage.getItem('email')) { location.href = '/login'; }
+
 
 const Verification = () => {
-    const e = localStorage.getItem('email');
-    if(!e){
-        location.href = '/login';
-    }
-  return (
+
+    return (
     <>
      <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
         <a href="javascript:void(0);" className="left back-btn"><i className="icon-left-btn"></i></a>

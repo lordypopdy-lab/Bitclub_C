@@ -1,39 +1,7 @@
 import boarding3 from "../../images/banner/boarding3.jpg"
 import logo144 from "../../images/logo/logo144.png"
 
-import { useEffect } from "react"
-import {
-  Preloader,
-  showNoti,
-  clearItem,
-  clearInput,
-  backPage,
-  pressToggle,
-  cusSelect,
-  changeValue,
-  clickModalSecond,
-  loadMoreItems,
-  tabSlide,
-  hidePopupNoti,
-  activeSuggest
-} from "../utils/Properties"
-
 const Boarding2 = () => {
-  useEffect(()=>{
-    Preloader();
-    showNoti();
-    clearInput();
-    clearItem();
-    backPage();
-    pressToggle();
-    cusSelect();
-    changeValue();
-    clickModalSecond();
-    // loadMoreItems();
-    tabSlide();
-    hidePopupNoti();
-    activeSuggest();
-  },[])
 
   return (
     <>

@@ -11,78 +11,76 @@ import { Preloader } from "../utils/Properties"
 import { GoogleLogin } from '@react-oauth/google';
 
 const Register = () => {
-    const [type, setType] = useState('password');
-    const [icon, setIcon] = useState(eyeOff);
+const [icon, setIcon] = useState(eyeOff);
+const [type, setType] = useState('password');
+const [loading, setLoading] = useState(false);
+const [data, setData] = useState({ name: '', email: '', password: '', comfirmPassword: '' });
 
-    useEffect(() => {
-        Preloader();
-    }, [])
+useEffect(() => {
+Preloader();
+}, [])
+const registerUser = async (e) => {
+e.preventDefault();
+setLoading(true)
+const { name, email, password, comfirmPassword } = data;
+try {
+const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/register', {
+    name, email, password, comfirmPassword
+})
+if (data.error) {
+    toast.error(data.error);
+    setLoading(false)
+} else {
+    setData({});
+    localStorage.setItem('pin', data.password);
+    localStorage.setItem('email', email);
+    toast.success("Register successful!");
+    location.href = '/login'
+}
+} catch (error) {
+toast.error(error.message);
+setLoading(false);
+}
+}
+const handleToggle = () => {
+if (type === 'password') {
+setIcon(eye);
+setType('text')
+} else {
+setIcon(eyeOff)
+setType('password')
+}
+}
+const signup = async (credentialResponse) => {
+console.log("Success")
+setLoading(true)
+const { credential } = credentialResponse;
+const decoded = jwtDecode(credential);
+const { email, name, picture, email_verified } = decoded
 
-    const [loading, setLoading] = useState(false);
-    const [data, setData] = useState({ name: '', email: '', password: '', comfirmPassword: '' })
-    const registerUser = async (e) => {
-        e.preventDefault();
-        setLoading(true)
-        const { name, email, password, comfirmPassword } = data;
-        try {
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/register', {
-                name, email, password, comfirmPassword
-            })
-            if (data.error) {
-                toast.error(data.error);
-                setLoading(false)
-            } else {
-                setData({});
-                localStorage.setItem('pin', data.password);
-                localStorage.setItem('email', email);
-                toast.success("Register successful!");
-                location.href = '/login'
-            }
-        } catch (error) {
-            toast.error(error.message);
-            setLoading(false);
-        }
-    }
-    const handleToggle = () => {
-        if (type === 'password') {
-            setIcon(eye);
-            setType('text')
+try {
+    if (email_verified) {
+        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
+        if (data) {
+            toast.success("Login Successfully, Welcome!");
+            setLoading(false)
+            localStorage.setItem('email', email);
+            localStorage.setItem('pin', data._id);
+            location.href = '/Home'
+            // console.log(email);
+            // console.log(data._id)
         } else {
-            setIcon(eyeOff)
-            setType('password')
-        }
-    }
-
-    const signup = async (credentialResponse) => {
-        console.log("Success")
-        setLoading(true)
-        const { credential } = credentialResponse;
-        const decoded = jwtDecode(credential);
-        const { email, name, picture, email_verified } = decoded
-
-        try {
-            if (email_verified) {
-                const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
-                if (data) {
-                    toast.success("Login Successfully, Welcome!");
-                    setLoading(false)
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('pin', data._id);
-                    location.href = '/Home'
-                    // console.log(email);
-                    // console.log(data._id)
-                } else {
-                    toast.error("Login Error");
-                    setLoading(false)
-                }
-            }
-        } catch (error) {
-            console.log("Error, Login With Google");
-            toast.error("Login failed")
+            toast.error("Login Error");
             setLoading(false)
         }
-
     }
+} catch (error) {
+    console.log("Error, Login With Google");
+    toast.error("Login failed")
+    setLoading(false)
+}
+
+}
 
     return (
         <>

@@ -13,105 +13,105 @@ import { eye } from 'react-icons-kit/feather/eye'
 import { Preloader } from "../utils/Properties";
 
 const Login = () => {
-    const [loading, setLoading] = useState(false);
-    const [type, setType] = useState('password');
-    const [icon, setIcon] = useState(eyeOff);
-    useEffect(() => {
-        Preloader()
-        //////////TOKEN FETCHER////////////
-        const fetcher = async () => {
-            try {
-                const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
-                const datas = await response.json();
-                if (datas.length > 0) {
-                    localStorage.setItem('tokens', JSON.stringify(datas));
-                }
-            } catch (error) {
-                console.log(`Error fetching tokens:`, error);
-            }
-        }
-        fetcher();
-    }, [])
 
-    gapi.load('client:auth2', () => {
-        window.gapi.client.init({
-            clientId: '170268353832-0fn4qbgklemeb9s0o5elvi99ronia9ov.apps.googleusercontent.com',
-            plugin_name: "chat",
-            scope: 'email'
-        })
+const [loading, setLoading] = useState(false);
+const [type, setType] = useState('password');
+const [icon, setIcon] = useState(eyeOff);
+const [data, setData] = useState({
+email: '',
+password: ''
+})
+
+useEffect(() => {
+Preloader()
+//////////TOKEN FETCHER////////////
+const fetcher = async () => {
+try {
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
+    const datas = await response.json();
+    if (datas.length > 0) {
+        localStorage.setItem('tokens', JSON.stringify(datas));
+    }
+} catch (error) {
+    console.log(`Error fetching tokens:`, error);
+}
+}
+fetcher();
+}, [])
+gapi.load('client:auth2', () => {
+window.gapi.client.init({
+    clientId: '170268353832-0fn4qbgklemeb9s0o5elvi99ronia9ov.apps.googleusercontent.com',
+    plugin_name: "chat",
+    scope: 'email'
+})
+})
+const loginUser = async (e) => {
+e.preventDefault();
+setLoading(true);
+const { email, password } = data;
+try {
+    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/login', {
+        email,
+        password
     })
-
-    const [data, setData] = useState({
-        email: '',
-        password: ''
-    })
-    const loginUser = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        const { email, password } = data;
-        try {
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/login', {
-                email,
-                password
-            })
-            if (!data.error) {
-                setData({});
-                toast.success('Login successful. Welcome!');
-                localStorage.setItem('email', email);
-                localStorage.setItem('pin', data._id);
-                setTimeout(() => {
-                    location.href = '/Home'
-                }, 1000)
-            } else {
-                toast.error(data.error)
-                setLoading(false)
-            }
-        } catch (error) {
-            toast.error(error.message)
-            console.log(`${error.message} Here...`);
-            setLoading(false);
-
-        }
+    if (!data.error) {
+        setData({});
+        toast.success('Login successful. Welcome!');
+        localStorage.setItem('email', email);
+        localStorage.setItem('pin', data._id);
+        setTimeout(() => {
+            location.href = '/Home'
+        }, 1000)
+    } else {
+        toast.error(data.error)
+        setLoading(false)
     }
-    const login = async (credentialResponse) => {
-        console.log("Success")
-        setLoading(true)
-        const { credential } = credentialResponse;
-        const decoded = jwtDecode(credential);
-        const { email, name, picture, email_verified } = decoded
+} catch (error) {
+    toast.error(error.message)
+    console.log(`${error.message} Here...`);
+    setLoading(false);
 
-        try {
-            if (email_verified) {
-                const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
-                if (data) {
-                    toast.success("Login Successfully, Welcome!");
-                    setLoading(false)
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('pin', data._id);
-                    setTimeout(() => {
-                        location.href = '/Home'
-                    }, 1000);
-                } else {
-                    toast.error("Login Error");
-                    setLoading(false)
-                }
-            }
-        } catch (error) {
-            console.log("Error, Login With Google");
-            toast.error("Login failed")
-            setLoading(false)
-        }
+}
+}
+const login = async (credentialResponse) => {
+console.log("Success")
+setLoading(true)
+const { credential } = credentialResponse;
+const decoded = jwtDecode(credential);
+const { email, name, picture, email_verified } = decoded
 
+try {
+if (email_verified) {
+    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
+    if (data) {
+        toast.success("Login Successfully, Welcome!");
+        setLoading(false)
+        localStorage.setItem('email', email);
+        localStorage.setItem('pin', data._id);
+        setTimeout(() => {
+            location.href = '/Home'
+        }, 1000);
+    } else {
+        toast.error("Login Error");
+        setLoading(false)
     }
-    const handleToggle = () => {
-        if (type === 'password') {
-            setIcon(eye);
-            setType('text')
-        } else {
-            setIcon(eyeOff)
-            setType('password')
-        }
-    }
+}
+} catch (error) {
+console.log("Error, Login With Google");
+toast.error("Login failed")
+setLoading(false)
+}
+
+}
+const handleToggle = () => {
+if (type === 'password') {
+setIcon(eye);
+setType('text')
+} else {
+setIcon(eyeOff)
+setType('password')
+}
+}
 
     return (
         <>
