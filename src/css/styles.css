@@ -1940,7 +1940,7 @@
   .coin-box .coin-logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
   }
   .coin-box .coin-logo .logo {
     width: 26px;
