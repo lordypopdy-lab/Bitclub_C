@@ -9,7 +9,8 @@ import { timeAgo } from "./utils/timeAgo";
 import logo144 from "../images/logo/logo144.png"
 import market1 from "../images/coin/market1.jpg"
 import market3 from "../images/coin/market3.jpg"
-import coin3 from "../images/coin/coin3.jpg"
+import coin3 from "../images/coin/coin3.jpg";
+import avt2 from "../images/avt/avt2.jpg";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
@@ -423,7 +424,7 @@ const Home = () => {
                 <div className="d-flex justify-content-between align-items-center gap-14">
                     <div className="box-account style-2">
                         <a href="/UserInfo">
-                        {!!user && user.picture !== '' ? <img src={!!user && user.picture} alt="img" className="avt" /> : <img src="/src/images/avt/avt2.jpg" alt="img" className="avt" />} 
+                        {!!user && user.picture !== '' ? <img src={!!user && user.picture} alt="img" className="avt" /> : <img src={avt2} alt="img" className="avt" />} 
                         </a>
                         <div className="search-box box-input-field style-2">
                             <a href="home-search.html" className="icon-search"></a>
