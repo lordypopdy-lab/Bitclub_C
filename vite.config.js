@@ -6,6 +6,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [react(),
     VitePWA({
+      workbox: {
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
+      },
       registerType: 'autoUpdate',
       manifest: {
         name: 'Bitclub Crypto Wallet',
