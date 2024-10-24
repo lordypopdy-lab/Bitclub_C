@@ -257,27 +257,27 @@ const AssetsRatings = () => {
                                     className="mySwiper"
                                 >
                                     <SwiperSlide>
-                                        <div class="swiper-slide nav-link active" data-bs-toggle="tab" data-bs-target="#popular" role="tab" aria-controls="popular" aria-selected="true">
+                                        <div class=" nav-link active" data-bs-toggle="tab" data-bs-target="#popular" role="tab" aria-controls="popular" aria-selected="true">
                                             Popular |
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#tokenIncrease" role="tab" aria-controls="tokenIncrease" aria-selected="false">
+                                        <div class=" nav-link" data-bs-toggle="tab" data-bs-target="#tokenIncrease" role="tab" aria-controls="tokenIncrease" aria-selected="false">
                                             Token Increase |
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#cryptocurrency" role="tab" aria-controls="cryptocurrency " aria-selected="false">
+                                        <div class=" nav-link" data-bs-toggle="tab" data-bs-target="#cryptocurrency" role="tab" aria-controls="cryptocurrency " aria-selected="false">
                                             Discount Cryptocurrency |
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#newToken" role="tab" aria-controls="newToken" aria-selected="false">
+                                        <div class=" nav-link" data-bs-toggle="tab" data-bs-target="#newToken" role="tab" aria-controls="newToken" aria-selected="false">
                                             New token |
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#mass" role="tab" aria-controls="mass" aria-selected="false">
+                                        <div class=" nav-link" data-bs-toggle="tab" data-bs-target="#mass" role="tab" aria-controls="mass" aria-selected="false">
                                             Mass
                                         </div>
                                     </SwiperSlide>
