@@ -4,6 +4,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { timeAgo } from "../utils/timeAgo";
 import { useEffect, useState } from "react";
+import logo144 from "../../images/logo/logo144.png";
 import FadeLoader from 'react-spinners/FadeLoader';
 import { UserContext } from "../../../context/UserContext";
 
@@ -240,7 +241,7 @@ if (!localStorage.getItem('email')) { location.href = '/login'; }
 <>
 {/* <!-- preloade --> */}
 <div className="preload preload-container">
-    <div className="preload-logo" style={{ backgroundImage: `url('https://bitclubs4-8hol7zph.b4a.run/src/images/logo/144.png')` }}>
+    <div className="preload-logo" style={{ backgroundImage: `url(${logo144})` }}>
         <div className="spinner"></div>
     </div>
 </div>
