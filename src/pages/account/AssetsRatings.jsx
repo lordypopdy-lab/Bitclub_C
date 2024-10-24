@@ -1,7 +1,13 @@
 import toast from "react-hot-toast";
+import { FreeMode } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import FadeLoader from 'react-spinners/FadeLoader';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
 const AssetsRatings = () => {
     const [loading, setLoading] = useState(false);
     const [list1, setList1] = useState(null);
