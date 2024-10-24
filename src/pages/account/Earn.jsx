@@ -33,19 +33,21 @@ ath_change_percentage: ''
 useEffect(() => {
 setLoading(true);
 
+
 //////////////''''''''//////////TOKEN FETCHER////////////''''''''//////////////
 const fetcher = async () => {
-try {
-const response = await fetch('https://api.coingecko.com/v3/coins/markets?vs_currency=usd');
-const datas = await response.json();
-if (datas.length > 0) {
-    localStorage.setItem('tokens', JSON.stringify(datas));
-}
-} catch (error) {
-console.log(`Error fetching tokens:`, error);
-}
-}
-fetcher();
+    try {
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
+    const datas = await response.json();
+    if (datas.length > 0) {
+        localStorage.setItem('tokens', JSON.stringify(datas));
+    }
+    } catch (error) {
+    console.log(`Error fetching tokens:`, error);
+    }
+    }
+    fetcher();
+
 try {
 const tokenGetter = localStorage.getItem('tokens');
 const datas = JSON.parse(tokenGetter);
