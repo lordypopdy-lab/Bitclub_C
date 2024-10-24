@@ -44,28 +44,28 @@ export const initializeSwiper = () => {
   }
 
   // Market Swiper
-  const marketSwiperElement = document.querySelector(".market-swiper");
-  if (marketSwiperElement) {
-    const spacing = marketSwiperElement.dataset.spaceBetween;
-    const preview = marketSwiperElement.dataset.preview;
-    const tablet = marketSwiperElement.dataset.tablet;
-    const desktop = marketSwiperElement.dataset.desktop;
+  // const marketSwiperElement = document.querySelector(".market-swiper");
+  // if (marketSwiperElement) {
+  //   const spacing = marketSwiperElement.dataset.spaceBetween;
+  //   const preview = marketSwiperElement.dataset.preview;
+  //   const tablet = marketSwiperElement.dataset.tablet;
+  //   const desktop = marketSwiperElement.dataset.desktop;
 
-    new Swiper(".market-swiper", {
-      speed: 1500,
-      slidesPerView: preview,
-      loop: false,
-      spaceBetween: parseInt(spacing),
-      observer: true,
-      observeParents: true,
-      breakpoints: {
-        1024: {
-          slidesPerView: desktop,
-        },
-        768: {
-          slidesPerView: tablet,
-        },
-      },
-    });
-  }
+  //   new Swiper(".market-swiper", {
+  //     speed: 1500,
+  //     slidesPerView: preview,
+  //     loop: false,
+  //     spaceBetween: parseInt(spacing),
+  //     observer: true,
+  //     observeParents: true,
+  //     breakpoints: {
+  //       1024: {
+  //         slidesPerView: desktop,
+  //       },
+  //       768: {
+  //         slidesPerView: tablet,
+  //       },
+  //     },
+  //   });
+  // }
 };

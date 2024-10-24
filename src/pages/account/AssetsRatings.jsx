@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import FadeLoader from 'react-spinners/FadeLoader';
+import { Swiper, SwiperSlide } from 'swiper/react';
 const AssetsRatings = () => {
 const [loading, setLoading] = useState(false);
 const [list1, setList1] = useState(null);
@@ -229,6 +230,7 @@ try {
 if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <>
+
 <div class="header fixed-top bg-surface d-flex justify-content-center align-items-center">
 <a href="javascript:void(0);" class="left back-btn"><i class="icon-left-btn"></i></a>
 <h3>Cryptex rating</h3>
