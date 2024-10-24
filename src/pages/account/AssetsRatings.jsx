@@ -244,7 +244,7 @@ const AssetsRatings = () => {
             <div class="pt-45 pb-16">
                 <div class="tf-container">
                     <div class="mt-8">
-                        <div class="swiper swiper-wrapper-r market-swiper line-bt" data-space-between="20" data-preview="auto">
+                        <div class="swiper swiper-wrapper-r market-swiper line-bt" data-space-between="50" data-preview="auto">
                             <div class="swiper-wrapper menu-tab-v3" role="tablist">
                                 <Swiper
                                     slidesPerView={2.7}
