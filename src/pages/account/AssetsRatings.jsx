@@ -245,44 +245,42 @@ const AssetsRatings = () => {
                 <div class="tf-container">
                     <div class="mt-8">
                         <div class="swiper swiper-wrapper-r market-swiper line-bt" data-space-between="20" data-preview="auto">
-                            <div class="swiper-wrapper menu-tab-v3" role="tablist">
-                                <Swiper
-                                    slidesPerView={1}
-                                    spaceBetween={12}
-                                    freeMode={true}
-                                    pagination={{
-                                        clickable: true,
-                                    }}
-                                    modules={[FreeMode]}
-                                    className="mySwiper"
-                                >
-                                    <SwiperSlide>
-                                        <div class="swiper-slide nav-link active" data-bs-toggle="tab" data-bs-target="#popular" role="tab" aria-controls="popular" aria-selected="true">
-                                            Popular |
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#tokenIncrease" role="tab" aria-controls="tokenIncrease" aria-selected="false">
-                                            Token Increase |
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#cryptocurrency" role="tab" aria-controls="cryptocurrency " aria-selected="false">
-                                            Discount Cryptocurrency |
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#newToken" role="tab" aria-controls="newToken" aria-selected="false">
-                                            New token |
-                                        </div>
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#mass" role="tab" aria-controls="mass" aria-selected="false">
-                                            Mass
-                                        </div>
-                                    </SwiperSlide>
-                                </Swiper>
-                            </div>
+                            <Swiper
+                                slidesPerView={1}
+                                spaceBetween={12}
+                                freeMode={true}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                modules={[FreeMode]}
+                                className="mySwiper"
+                            >
+                                <SwiperSlide>
+                                    <div class="swiper-slide nav-link active" data-bs-toggle="tab" data-bs-target="#popular" role="tab" aria-controls="popular" aria-selected="true">
+                                        Popular |
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#tokenIncrease" role="tab" aria-controls="tokenIncrease" aria-selected="false">
+                                        Token Increase |
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#cryptocurrency" role="tab" aria-controls="cryptocurrency " aria-selected="false">
+                                        Discount Cryptocurrency |
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#newToken" role="tab" aria-controls="newToken" aria-selected="false">
+                                        New token |
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div class="swiper-slide nav-link" data-bs-toggle="tab" data-bs-target="#mass" role="tab" aria-controls="mass" aria-selected="false">
+                                        Mass
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
 
                         <div class="tab-content mt-8 mb-16">
