@@ -247,8 +247,8 @@ const AssetsRatings = () => {
                         <div class="swiper swiper-wrapper-r market-swiper line-bt" data-space-between="20" data-preview="auto">
                             <div class="swiper-wrapper menu-tab-v3" role="tablist">
                                 <Swiper
-                                    slidesPerView={2.1}
-                                    spaceBetween={12}
+                                    slidesPerView={2.7}
+                                    spaceBetween={5}
                                     freeMode={true}
                                     pagination={{
                                         clickable: true,
