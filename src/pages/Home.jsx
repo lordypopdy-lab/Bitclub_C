@@ -471,7 +471,7 @@ location.href='/home'
                 <div className="bg-menuDark tf-container">
                     <Swiper
                         slidesPerView={2.4}
-                        spaceBetween={12}
+                        spaceBetween={7}
                         freeMode={true}
                         pagination={{
                             clickable: true,
