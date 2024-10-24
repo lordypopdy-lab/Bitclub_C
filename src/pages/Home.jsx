@@ -482,7 +482,6 @@ location.href='/home'
                         <div className="pt-12 pb-12 mt-4">
                             <h5>Market</h5>
                             <div className="swiper" >
-                                {/* <div className="swiper-wrapper"> */}
                                 <SwiperSlide>
                                     <a href="/Exchange" className="coin-box d-block">
                                         <div className="coin-logo">
@@ -547,8 +546,6 @@ location.href='/home'
                             </div>
 
                         </div>
-
-                        {/* </div> */}
                     </Swiper>
                 </div>
 
