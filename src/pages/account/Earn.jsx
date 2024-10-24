@@ -271,7 +271,7 @@ console.log(`Contract is yet to Activated!: ${error}`)
 <div className="tf-container">
 <h5 className=" mb-2 mt-20">Create & sell your Wallet</h5>
 <Swiper
-    slidesPerView={2}
+    slidesPerView={1}
     spaceBetween={12}
     freeMode={true}
     pagination={{
