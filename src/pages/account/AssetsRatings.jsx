@@ -248,7 +248,7 @@ const AssetsRatings = () => {
                             <div class="swiper-wrapper menu-tab-v3" role="tablist">
                                 <Swiper
                                     slidesPerView={2.7}
-                                    spaceBetween={5}
+                                    spaceBetween={12}
                                     freeMode={true}
                                     pagination={{
                                         clickable: true,
