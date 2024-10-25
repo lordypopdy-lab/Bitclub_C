@@ -79,7 +79,7 @@ import {
 
 function App() {
   useEffect(() => {
-    initializeSwiper()
+    initializeSwiper();
     Preloader();
   }, [])
 
