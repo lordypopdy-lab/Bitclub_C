@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import FadeLoader from 'react-spinners/FadeLoader';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const ChangePassword = () => {
 const [loading, setLoading] = useState(false);
@@ -39,6 +38,9 @@ try {
     setLoading(false)
 }
 }
+
+if (!localStorage.getItem('email')) { location.href = '/login'; }
+
     return (
 <>
     <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">

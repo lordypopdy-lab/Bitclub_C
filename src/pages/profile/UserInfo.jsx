@@ -12,10 +12,10 @@ import coin14 from "../../images/coin/coin14.jpg";
 import coin11 from "../../images/coin/coin11.jpg";
 import logo144 from "../../images/logo/logo144.png";
 import { UserContext } from '../../../context/UserContext';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const UserInfo = () => {
 const {user} = useContext(UserContext);
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 
     return (
         <>

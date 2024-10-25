@@ -1,6 +1,5 @@
 import React from 'react';
 import lineqr from "../../images/banner/lineqr.png";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const FaceIdDone = () => {
 $(document).ready(function () {
@@ -8,6 +7,8 @@ window.setTimeout(function(){
     location.href = "/VerificationDone";
 },4000) 
 });
+
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 
   return (
 <>

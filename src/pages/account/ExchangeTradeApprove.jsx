@@ -5,7 +5,7 @@ import coin6 from "../../images/coin/coin6.jpg"
 
 
 const ExchangeTradeApprove = () => {
-    if (!localStorage.getItem('email')) { location.href = '/login'; }
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <div className="app-wallet">
 <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">

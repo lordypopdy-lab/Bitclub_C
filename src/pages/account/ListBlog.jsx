@@ -5,10 +5,9 @@ import blog3 from "../../images/blog/blog3.jpg";
 import blog4 from "../../images/blog/blog4.jpg";
 import blog5 from "../../images/blog/blog5.jpg";
 import blog6 from "../../images/blog/blog6.jpg";
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const ListBlog = () => {
-
+if(!localStorage.getItem('email')){ location.href = '/login'; }
   return (
     <>
       <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">

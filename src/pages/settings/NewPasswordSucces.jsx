@@ -1,9 +1,8 @@
 import React from 'react';
 import banner3 from "../../images/banner/banner3.jpg";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const NewPasswordSucces = () => {
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <>
 <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">

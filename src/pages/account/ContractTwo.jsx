@@ -5,13 +5,13 @@ import toast from 'react-hot-toast';
 import { useState, useEffect } from "react";
 import FadeLoader from 'react-spinners/FadeLoader';
 import { UserContext } from '../../../context/UserContext';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 import coin3 from "../../images/coin/coin3.jpg";
 import coin5 from "../../images/coin/coin5.jpg";
 import coin6 from "../../images/coin/coin6.jpg";
 
 const ContractTwo = () => {
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     
 const { user } = useContext(UserContext);
 const [status, setStatus] = useState('');

@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import logo144 from "../../images/logo/logo144.png";
 import { UserContext } from "../../../context/UserContext";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const Profile = () => {
 const { user } = useContext(UserContext);
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 const logOut = () => {
 localStorage.removeItem('email');
 localStorage.removeItem('pin');

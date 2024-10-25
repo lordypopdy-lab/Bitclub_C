@@ -1,9 +1,9 @@
 import React from 'react';
 import logo144 from "../../images/logo/logo144.png";
 import banner2 from "../../images/banner/banner2.jpg";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const RessetPassword = () => {
+if (!localStorage.getItem('email')) { location.href = '/login'; }
   return (
     <>
       {/* <!-- preloade --> */}

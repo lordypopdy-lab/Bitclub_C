@@ -2,9 +2,9 @@ import React from 'react';
 import avt2 from "../../images/avt/avt2.jpg"
 import logo144 from "../../images/logo/logo144.png";
 import bannerblog from "../../images/blog/bannerblog.jpg";
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const BlogDetail = () => {
+if(!localStorage.getItem('email')){ location.href = '/login'; }
     return (
 <>
 {/* <!-- preloade --> */}

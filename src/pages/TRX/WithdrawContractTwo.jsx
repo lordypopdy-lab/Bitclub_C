@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import coin3 from "../../images/coin/coin3.jpg";
 import coin5 from "../../images/coin/coin5.jpg";
 import FadeLoader from 'react-spinners/FadeLoader';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const WithdrawContractTwo = () => {
   
@@ -19,7 +18,7 @@ const [userAddress, setUserAddress] = useState('');
 const [usd_details, setUsdDetails] = useState({ eth_price: 0, eth_last_change: '' });
 const [pinInput, setPinInput] = useState({ pin1: '', pin2: '', pin3: '', pin4: '' });
 const [trx, setTrx] = useState({ from: '', to: '', contractPrice: null, ContractProfit: null, status: null, id: null, blockNumber: null, priceInUsd: null });
-  
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 useEffect(() => {
   setLoading(true);
   try {

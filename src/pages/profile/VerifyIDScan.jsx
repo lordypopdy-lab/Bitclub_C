@@ -1,8 +1,7 @@
 import React from 'react';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const VerifyIDScan = () => {
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
   return (
     <>
      <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">

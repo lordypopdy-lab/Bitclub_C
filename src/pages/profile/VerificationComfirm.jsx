@@ -1,6 +1,4 @@
 import React from 'react';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
-
 
 const VerificationComfirm = () => {
 

@@ -3,8 +3,6 @@ import { ethers } from 'ethers';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from "react";
 import FadeLoader from 'react-spinners/FadeLoader';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
-
 
 import coin3 from "../../images/coin/coin3.jpg";
 import coin5 from "../../images/coin/coin5.jpg";
@@ -24,7 +22,7 @@ const [balanceEth, setBalanceEth] = useState(null);
 const [balanceUsd, setBalanceUsd] = useState(null);
 const [usd_details, setUsdDetails] = useState({ eth_price: 0, eth_last_change: '' });
 const [pinInput, setPinInput] = useState({ pin1: '', pin2: '', pin3: '', pin4: '' });
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 const [trxH, setTrxH] = useState({
 to: '',
 from: '',

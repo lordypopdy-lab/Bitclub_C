@@ -1,9 +1,9 @@
 import React from 'react';
 import coin1 from "../../images/coin/coin1.jpg";
 import logo144 from "../../images/logo/logo144.png";
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const BuyQuantity = () => {
+if(!localStorage.getItem('email')){ location.href = '/login'; }
 
     return (
         <>

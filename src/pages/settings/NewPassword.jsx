@@ -1,8 +1,9 @@
 import React from 'react';
 import logo144 from "../../images/logo/logo144.png";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const NewPassword = () => {
+
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 
     return (
 <>

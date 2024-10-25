@@ -1,9 +1,8 @@
 import React from 'react';
 import logo144 from "../../images/logo/logo144.png";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const Opt02 = () => {
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <>
 {/* <!-- preloade --> */}

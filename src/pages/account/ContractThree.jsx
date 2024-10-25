@@ -2,10 +2,9 @@ import React from 'react';
 import coin3 from "../../images/coin/coin3.jpg";
 import coin5 from "../../images/coin/coin5.jpg";
 import coin6 from "../../images/coin/coin6.jpg";
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const ContractThree = () => {
-
+if(!localStorage.getItem('email')){ location.href = '/login'; }
     return (
         <>
             <div className="app-wallet">

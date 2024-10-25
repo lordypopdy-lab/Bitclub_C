@@ -1,8 +1,8 @@
 import React from 'react';
 import lineqr from "../../images/banner/lineqr.png";
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const CameraDone = () => {
+if(!localStorage.getItem('email')){ location.href = '/login'; }
     $(document).ready(function () {
         window.setTimeout(function () {
             location.href = "/CameraSuccess";

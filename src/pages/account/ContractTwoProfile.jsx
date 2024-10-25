@@ -3,7 +3,6 @@ import { ethers } from 'ethers';
 import toast from 'react-hot-toast';
 import { useState, useEffect } from "react";
 import FadeLoader from 'react-spinners/FadeLoader';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 import coin3 from "../../images/coin/coin3.jpg";
 import coin5 from "../../images/coin/coin5.jpg";
@@ -22,6 +21,7 @@ const [checkPin, setCheckPin] = useState(false);
 const [pinInput, setPinInput] = useState({ pin1: '', pin2: '', pin3: '', pin4: '' });
 const [usd_details, setUsdDetails] = useState({ eth_price: 0, eth_last_change: '' });
 const [trx, setTrx] = useState({ from: '', to: '', contractPrice: null, ContractProfit: null, status: '', id: null, blockNumber: null, priceInUsd: null });
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 useEffect(() => {
 setLoading(true);

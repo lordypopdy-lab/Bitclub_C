@@ -3,10 +3,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import FadeLoader from 'react-spinners/FadeLoader';
-if (!localStorage.getItem('email')) { location.href = '/login' };
 
 const ChooseVerification = (props) => {
-
+if (!localStorage.getItem('email')) { location.href = '/login' };
 const [Country, setCountry] = useState(null);
 const [loading, setLoading] = useState(false);
 const [Id, setId] = useState(null);

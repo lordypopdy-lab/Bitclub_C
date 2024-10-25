@@ -1,5 +1,4 @@
 import { useState } from "react";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const TellUsMore = () => {
 const [data, setData] = useState({
@@ -10,7 +9,7 @@ useOtherPlatfrom: ''
 const submitMore = (e)=>{
 e.preventDefault();
 }
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <>
 <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">

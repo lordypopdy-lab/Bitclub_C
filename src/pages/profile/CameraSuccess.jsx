@@ -1,8 +1,7 @@
 import React from 'react';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 
 const CameraSuccess = () => {
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
   return (
    <>
     <div className="bg-camera">

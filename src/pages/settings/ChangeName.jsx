@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
 import { UserContext } from '../../../context/UserContext';
-if(!localStorage.getItem('email')){ location.href = '/login'; }
 
 const ChangeName = () => {
 
@@ -14,6 +13,7 @@ const [data, setData] = useState({
 name: ''
 });
 
+if(!localStorage.getItem('email')){ location.href = '/login'; }
 const updateName = async (e) => {
 e.preventDefault();
 setLoading(true)

@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 const Earn = () => {
-if (!localStorage.getItem('email')) { location.href = '/login'; }
+
 const [loading, setLoading] = useState(false);
 const [list1, setList1] = useState(null);
 const [list2, setList2] = useState(null);
@@ -29,7 +29,7 @@ lastTradindVolume24: '',
 pricePercentage: '',
 ath_change_percentage: ''
 });
-
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 useEffect(() => {
 setLoading(true);
 
