@@ -3,7 +3,6 @@ import axios from 'axios';
 import Webcam from "react-webcam";
 import toast from 'react-hot-toast';
 import { useState, useCallback, useRef } from 'react';
-if (!localStorage.getItem('email')) { location.href = '/login'; }
 const CameraScan = () => {
 
 const webcamRef = React.useRef(null);
@@ -38,6 +37,7 @@ try {
 }
 }
 
+if (!localStorage.getItem('email')) { location.href = '/login'; }
     return (
 <>
 <div className="bg-camera">

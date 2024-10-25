@@ -13,8 +13,6 @@ import market3 from "../images/coin/market3.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import FadeLoader from 'react-spinners/FadeLoader';
 import { UserContext } from "../../context/UserContext";
-if (!localStorage.getItem('email')) { location.href = '/login'; }
-
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -407,6 +405,8 @@ const getData = localStorage.getItem('tokens');
 if(!getData){
 location.href='/home'
 }
+
+if (!localStorage.getItem('email')) { location.href = '/login'; }
 
     return (
         <>
