@@ -311,11 +311,11 @@ const Deposite = () => {
                 <div className="tf-container">
                     <h4>Trending</h4>
                     <div className="btn-group mt-3">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain"  class="btn m-1 btn-dark rounded text-light">BTC</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain"  class="btn m-1 btn-dark rounded text-light">ETH</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain"  class="btn m-1 btn-dark rounded text-light">USD</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain"  class="btn m-1 btn-dark rounded text-light">USDT</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain"  class="btn m-1 btn-dark rounded text-light">BNB</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BTC</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">ETH</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USD</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USDT</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BNB</button>
                     </div>
                     <div className="mt-20">
                         <div className="line-bt">
@@ -540,27 +540,16 @@ const Deposite = () => {
                     <div className="modal-content">
                         <div className="box-detail-chart">
                             <div className="bottom">
-                                <h6 className="text-button">Token information</h6>
-                                <ul className="mt-16 d-flex gap-16">
-                                    <li className="flex-1">
-                                        <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
-                                            <div className="content">
-                                                <p className="text-small">{details.symbol.toLocaleUpperCase()} <span className="text-extra-small text-secondary">/ USD</span></p>
-                                                {details.pricePercentage > 1 ? <span className="d-inline-block mt-8 coin-btn increase">{details.pricePercentage}</span> : <span className="d-inline-block mt-8 coin-btn decrease">{details.pricePercentage}</span>}
-                                            </div>
-                                            <span className="icon-arr-right fs-12"></span>
-                                        </a>
-                                    </li>
-                                    <li className="flex-1">
-                                        <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
-                                            <div className="content">
-                                                <p className="text-small">{details.name}</p>
-                                                {details.ath_change_percentage > 1 ? <span className="d-inline-block mt-8 coin-btn increase">{details.ath_change_percentage}</span> : <span className="d-inline-block mt-8 coin-btn decrease">{details.ath_change_percentage}</span>}
-                                            </div>
-                                            <span className="icon-arr-right fs-12"></span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <h6 className="text-button">Choose Network</h6>
+                                <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
+                                    <div className="content">
+                                        <span className="text-small">Ethereum (ERC20)</span>
+                                        <p className="text-extra-small text-secondary">6 block comfirmation</p>
+                                        <p className="text-extra-small text-secondary">Min. deposit 0.00000002 BTC</p>
+                                        <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
+                                        {details.pricePercentage > 1 ? <span className="d-inline-block mt-8 coin-btn increase">{details.pricePercentage}</span> : <span className="d-inline-block mt-8 coin-btn decrease">{details.pricePercentage}</span>}
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
