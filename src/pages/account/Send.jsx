@@ -35,7 +35,7 @@ transactionHash: ''
 useEffect(() => {
 setLoading(true);
 
-//////////////''''''''//////////TOKEN FETCHER////////////''''''''//////////////
+//''''''''//////////TOKEN FETCHER////////////''''''''//
 const fetcher = async () => {
 try {
     const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
@@ -49,9 +49,17 @@ try {
 }
 fetcher();
 
-try {
-const data = JSON.parse(localStorage.getItem('tokens'));
-if (window.ethereum) {
+const pinCheck = async () => {
+    const email = localStorage.getItem('email');
+    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinCheck', { email });
+    if (data.exists == true) {
+        setCheckPin(true);
+    }
+}
+pinCheck();
+
+if (typeof(window.ethereum)) {
+    const data = JSON.parse(localStorage.getItem('tokens'));
     setUsdDetails({
         eth_price: data[1].current_price,
         eth_last_change: data[1].price_change_percentage_24h
@@ -59,16 +67,6 @@ if (window.ethereum) {
     const USD_PRICE = data[1].current_price;
     set_trx_rate(USD_PRICE);
     setLoading(false);
-
-
-    const pinCheck = async () => {
-        const email = localStorage.getItem('email');
-        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinCheck', { email });
-        if (data.exists == true) {
-            setCheckPin(true);
-        }
-    }
-    pinCheck();
 
     const Connect = async () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -194,10 +192,7 @@ if (window.ethereum) {
     toast.error('Non-Ethereum browser detected. Consider trying MetaMask!')
     console.log('Non-Ethereum browser detected. Consider trying MetaMask!');
 }
-} catch (error) {
-toast.error("Error fetching API refresh App");
-console.log(error);
-}
+
 }, [])
 
 //COPY FROM FUNCTION

@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import FaceID from './pages/profile/FaceID';
 import Option from './pages/settings/Option';
 import VerifyID from './pages/profile/VerifyID';
+import Deposite from './pages/account/Deposite';
 import BlogDetail from './pages/account/BlogDetail';
 import Recharge from './pages/account/Recharge';
 import Register from './pages/settings/Register';
@@ -25,7 +26,7 @@ import FaceIdDone from './pages/profile/FaceIdDone';
 import RessetPassword from './pages/settings/RessetPassword';
 import AddresScan from './pages/account/AddresScan';
 import Verification from './pages/profile/Verification';
-import NewPassword from './pages/settings/NewPassword';
+import NewPassword from './pages/settinDegs/NewPassword';
 import CameraScan from './pages/profile/CameraScan';
 import ChooseIdentity from './pages/profile/ChooseIdentity';
 import ChoosePayment from './pages/account/ChoosePayment';
@@ -100,6 +101,7 @@ function App() {
             <Route path='/terms' element={<Terms />} />
             <Route path='/policy' element={<Policy />} />
             <Route path='/FaceID' element={<FaceID />} />
+            <Route path='/Deposite' element={<Deposite />} />
             <Route path='/FaceIdDone' element={<FaceIdDone />} />
             <Route path='/ListBlog' element={<ListBlog />} />
             <Route path='/Recharge' element={<Recharge />} />
