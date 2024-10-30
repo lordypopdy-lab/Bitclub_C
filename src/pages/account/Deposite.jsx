@@ -539,9 +539,17 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                        <h6 className="text-button mb-4 mt-4 text-center">Choose Network</h6> <hr />
+                        <h6 className="text-button mb-2 mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom">
-                                <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
+                                    <div className="content">
+                                        <span className="text-small">Bitcoin</span>
+                                        <p className="text-extra-small text-secondary">1 block comfirmation</p>
+                                        <p className="text-extra-small text-secondary">Min. deposit 0.000006 BTC</p>
+                                        <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
+                                    </div>
+                                </a>
+                                <a href="#" className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -549,9 +557,9 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
-                                        <span className="text-small">Ethereum (ERC20)</span>
+                                        <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
                                         <p className="text-extra-small text-secondary">Min. deposit 0.00000002 BTC</p>
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
