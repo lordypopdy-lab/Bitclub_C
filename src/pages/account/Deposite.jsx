@@ -539,8 +539,8 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
+                        <h6 className="text-button mb-4">Choose Network</h6> <hr />
                             <div className="bottom">
-                                <h6 className="text-button mb-4">Choose Network</h6> <hr />
                                 <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
@@ -551,7 +551,6 @@ const Deposite = () => {
                                 </a>
                             </div>
                             <div className="bottom">
-                                <h6 className="text-button mb-4">Choose Network</h6> <hr />
                                 <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
