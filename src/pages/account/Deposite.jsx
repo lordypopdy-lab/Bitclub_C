@@ -539,7 +539,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                        <h6 className="text-button mt-4 text-center">Choose Network</h6> <hr />
+                        <h6 className="text-button mt-2 text-center">Choose Network</h6> <hr />
                             <div className="bottom">
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
