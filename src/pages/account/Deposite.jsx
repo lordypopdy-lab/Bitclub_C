@@ -549,8 +549,6 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                            </div>
-                            <div className="bottom">
                                 <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
