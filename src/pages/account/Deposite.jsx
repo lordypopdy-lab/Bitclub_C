@@ -540,14 +540,24 @@ const Deposite = () => {
                     <div className="modal-content">
                         <div className="box-detail-chart">
                             <div className="bottom">
-                                <h6 className="text-button">Choose Network</h6>
+                                <h6 className="text-button mb-4">Choose Network</h6> <hr />
                                 <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
                                         <p className="text-extra-small text-secondary">Min. deposit 0.00000002 BTC</p>
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
-                                        {details.pricePercentage > 1 ? <span className="d-inline-block mt-8 coin-btn increase">{details.pricePercentage}</span> : <span className="d-inline-block mt-8 coin-btn decrease">{details.pricePercentage}</span>}
+                                    </div>
+                                </a>
+                            </div>
+                            <div className="bottom">
+                                <h6 className="text-button mb-4">Choose Network</h6> <hr />
+                                <a href="#" className="accent-box-v6 bg-surface d-flex justify-content-between align-items-center">
+                                    <div className="content">
+                                        <span className="text-small">Ethereum (ERC20)</span>
+                                        <p className="text-extra-small text-secondary">6 block comfirmation</p>
+                                        <p className="text-extra-small text-secondary">Min. deposit 0.00000002 BTC</p>
+                                        <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
                             </div>
