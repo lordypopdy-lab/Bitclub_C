@@ -541,7 +541,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                         <h6 className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{marginTop: '-20px'}}>
-                                <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
+                                <a href="#" className="accent-box-v6 bg-dark mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -565,6 +565,9 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
+                                <p className="accent-box-v6 mb-3 bg-dark d-flex justify-content-between align-items-center">
+                                    Please note that only supported networks on Bitblub platform are shown, if you deposit via another Network your assets may lost.
+                                </p>
                             </div>
                         </div>
                     </div>
