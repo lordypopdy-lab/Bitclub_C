@@ -3,20 +3,20 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
 
-import logo144 from '../../images/logo/logo144.png'
-import coin1 from "../../images/coin/coin1.jpg"
-import coin2 from "../../images/coin/coin2.jpg"
-import coin3 from "../../images/coin/coin3.jpg"
-import coin4 from "../../images/coin/coin4.jpg"
-import coin5 from "../../images/coin/coin5.jpg"
-import coin6 from "../../images/coin/coin6.jpg"
-import coin7 from "../../images/coin/coin7.jpg"
-import coin8 from "../../images/coin/coin8.jpg"
-import coin9 from "../../images/coin/coin9.jpg"
-import coin10 from "../../images/coin/coin10.jpg"
-import coin11 from "../../images/coin/coin11.jpg"
-import coin12 from "../../images/coin/coin12.jpg"
-import coin13 from "../../images/coin/coin13.jpg"
+import logo144 from '../../images/logo/logo144.png';
+import coin1 from "../../images/coin/coin1.jpg";
+import coin2 from "../../images/coin/coin2.jpg";
+import coin3 from "../../images/coin/coin3.jpg";
+import coin4 from "../../images/coin/coin4.jpg";
+import coin5 from "../../images/coin/coin5.jpg";
+import coin6 from "../../images/coin/coin6.jpg";
+import coin7 from "../../images/coin/coin7.jpg";
+import coin8 from "../../images/coin/coin8.jpg";
+import coin9 from "../../images/coin/coin9.jpg";
+import coin10 from "../../images/coin/coin10.jpg";
+import coin11 from "../../images/coin/coin11.jpg";
+import coin12 from "../../images/coin/coin12.jpg";
+import coin13 from "../../images/coin/coin13.jpg";
 
 const Exchange = () => {
 if (!localStorage.getItem('email')) { location.href = '/login'; }
@@ -336,7 +336,7 @@ toast.success("Trade Exchange is Comming Soon!");
             <div className="tab-content mt-8 mb-16">
                 <div className="tab-pane fade show active" id="all" role="tabpanel">
                     <div className="mt-4 search-box box-input-field">
-                        <a href="/home" className="icon-search"></a>
+                        <a href="/home" className="icon-search mb-3"></a>
                         <input
                             type="text"
                             placeholder="Swap over 100+ tokens on more than 10 chains"
