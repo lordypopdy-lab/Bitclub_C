@@ -551,7 +551,7 @@ if (!localStorage.getItem('email')) { location.href = '/login'; }
                             </a>
                         </li>
                     </ul>
-                    <button className="mt-20">Buy Assets</button>
+                    <a href="/Deposite" className="btn btn-primary mt-20">Buy Assets</a>
                 </div>
             </div>
         </div>
