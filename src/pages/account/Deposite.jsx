@@ -4,8 +4,10 @@ import Exchange from './Exchange';
 const Deposite = () => {
   return (
     <div>
-        <Exchange />
-      <h1>Hello World!</h1>
+        <h1>Hello World1</h1>
+        <Exchange >
+            <h1>Hello World2</h1>
+        </Exchange>
     </div>
   )
 }
