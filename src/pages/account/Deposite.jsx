@@ -334,9 +334,16 @@ const [details, setDetails] = useState({
             </div>
 
             <div className="tab-content mt-8 mb-16">
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-light">Light</button><br />
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-light">Light</button>
                 <div className="tab-pane fade show active" id="all" role="tabpanel">
-                    <div className="mt-4 search-box box-input-field">
-                        <a href="/home" className="icon-search mb-3"></a>
+                    <div className="mt-4 mb-4 search-box box-input-field">
+                        <a href="/home" className="icon-search"></a>
                         <input
                             type="text"
                             placeholder="Swap over 100+ tokens on more than 10 chains"
@@ -425,7 +432,7 @@ const [details, setDetails] = useState({
                 Home
             </a>
         </li>
-        <li className="active">
+        <li className="">
             <a href="/Exchange">
                 <i className="icon icon-exchange"></i>
                 Exchange
