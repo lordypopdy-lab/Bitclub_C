@@ -309,13 +309,11 @@ const Deposite = () => {
             </div>
             <div className="pt-55 pb-80">
                 <div className="tf-container">
-                <div className="btn-group">
                     <h4>Trending</h4>
-                            <button type="button" class="btn btn-dark text-light">Light</button>
-                            <button type="button" class="btn btn-dark text-light">Light</button>
-                            <button type="button" class="btn btn-dark text-light">Light</button>
-                            <button type="button" class="btn btn-dark text-light">Light</button><br />
-                        </div>
+                    <button type="button" class="btn m-2 btn-dark text-light">Light</button>
+                    <button type="button" class="btn m-2 btn-dark text-light">Light</button>
+                    <button type="button" class="btn m-2 btn-dark text-light">Light</button>
+                    <button type="button" class="btn m-2 btn-dark text-light">Light</button>
                     <div className="mt-20">
                         <div className="line-bt">
                             <div className="swiper swiper-wrapper-r market-swiper" data-space-between="20" data-preview="auto">
