@@ -26,7 +26,7 @@ import FaceIdDone from './pages/profile/FaceIdDone';
 import RessetPassword from './pages/settings/RessetPassword';
 import AddresScan from './pages/account/AddresScan';
 import Verification from './pages/profile/Verification';
-import NewPassword from './pages/settinDegs/NewPassword';
+import NewPassword from './pages/settings/NewPassword';
 import CameraScan from './pages/profile/CameraScan';
 import ChooseIdentity from './pages/profile/ChooseIdentity';
 import ChoosePayment from './pages/account/ChoosePayment';
@@ -101,13 +101,13 @@ function App() {
             <Route path='/terms' element={<Terms />} />
             <Route path='/policy' element={<Policy />} />
             <Route path='/FaceID' element={<FaceID />} />
-            <Route path='/Deposite' element={<Deposite />} />
             <Route path='/FaceIdDone' element={<FaceIdDone />} />
             <Route path='/ListBlog' element={<ListBlog />} />
             <Route path='/Recharge' element={<Recharge />} />
             <Route path='/Exchange' element={<Exchange />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/Login' element={<Login />} />
+            <Route path='Deposite' element={<Deposite />} />
             <Route path='/VerifyID' element={<VerifyID />} />
             <Route path='/Boarding2' element={<Boarding2 />} />
             <Route path='/BlogDetail' element={<BlogDetail />} />
