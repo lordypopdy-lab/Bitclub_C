@@ -310,13 +310,11 @@ const Deposite = () => {
             <div className="pt-55 pb-80">
                 <div className="tf-container">
                 <div className="btn-group">
-                            <button type="button" class="btn btn-light">Light</button>
-                            <button type="button" class="btn btn-light">Light</button>
-                            <button type="button" class="btn btn-light">Light</button>
-                            <button type="button" class="btn btn-light">Light</button><br />
-                            <button type="button" class="btn btn-light">Light</button>
-                            <button type="button" class="btn btn-light">Light</button>
-                            <button type="button" class="btn btn-light">Light</button>
+                    <h4>Trending</h4>
+                            <button type="button" class="btn btn-dark text-light">Light</button>
+                            <button type="button" class="btn btn-dark text-light">Light</button>
+                            <button type="button" class="btn btn-dark text-light">Light</button>
+                            <button type="button" class="btn btn-dark text-light">Light</button><br />
                         </div>
                     <div className="mt-20">
                         <div className="line-bt">
