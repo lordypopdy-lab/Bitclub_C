@@ -239,8 +239,8 @@ const Deposite = () => {
                 return (
                     <>
                         <Swiper
-                            slidesPerView={4}
-                            spaceBetween={7}
+                            slidesPerView={12}
+                            spaceBetween={10}
                             freeMode={true}
                             pagination={{
                                 clickable: true,
@@ -568,7 +568,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                            <h6 className="text-button mt-5 mb-0 text-center">Choose Network</h6> <hr />
+                            <h6 style={{marginBottom: "-18px"}} className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
