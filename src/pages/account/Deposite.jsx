@@ -18,6 +18,7 @@ import coin10 from "../../images/coin/coin10.jpg";
 import coin11 from "../../images/coin/coin11.jpg";
 import coin12 from "../../images/coin/coin12.jpg";
 import coin13 from "../../images/coin/coin13.jpg";
+import { FlatESLint } from "eslint/use-at-your-own-risk";
 
 const Deposite = () => {
     if (!localStorage.getItem('email')) { location.href = '/login'; }
@@ -29,6 +30,7 @@ const Deposite = () => {
     const [list5, setList5] = useState(null);
     const [tokens, setTokens] = useState([]);
     const [search, setSearch] = useState('');
+    const [showAll, setShowAll] = useState(false);
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
 
@@ -329,7 +331,9 @@ const Deposite = () => {
                 </div>
             </div>
             {/* <!-- /preload End -->  */}
-            <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">
+
+    {showAll === false ?  <>
+        <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">
                 <h3 className="d-flex gap-12">
                     <a href="#">Deposit</a>
                     <a onClick={TradeExchang} className="text-secondary">Crypto</a>
@@ -481,6 +485,9 @@ const Deposite = () => {
                     </li>
                 </ul>
             </div>
+    </> : ''
+    
+    }
 
             {/* <!--chart detail  --> */}
             <div className="modal fade action-sheet" id="detailChart">
@@ -569,7 +576,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                             <h6 style={{ marginBottom: "-14px" }} className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
-                                <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={()=>setShowAll(true)} className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -577,7 +584,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={()=>setShowAll(true)} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -585,7 +592,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={()=>setShowAll(true)}  className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
