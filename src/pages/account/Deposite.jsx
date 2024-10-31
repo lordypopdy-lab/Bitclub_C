@@ -371,7 +371,7 @@ const Deposite = () => {
 
                         <div className="tab-content mt-8 mb-16">
                             <div className="tab-pane fade show active" id="all" role="tabpanel">
-                                <div className="mt-4 mb-5 search-box box-input-field">
+                                <div className="mt-4 mb-4 search-box box-input-field">
                                     <a href="/home" className="icon-search"></a>
                                     <input
                                         type="text"
@@ -383,7 +383,7 @@ const Deposite = () => {
                                     />
                                     <i className="icon-close"></i>
                                 </div>
-                                <div className="d-flex justify-content-between">
+                                <div className="d-flex mt-3 justify-content-between">
                                     Name/Market
                                     <p className="d-flex gap-8">
                                         <span>Current Price(USD)/</span>
