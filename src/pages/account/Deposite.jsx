@@ -236,7 +236,7 @@ const Deposite = () => {
                     <>
                         <ul>
                             <li className="m-2" style={{ listStyleL: "none" }} key={index}>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                             </li>
                         </ul>
                     </>
