@@ -76,7 +76,7 @@ const Deposite = () => {
 
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item style-2 gap-12">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item style-2 gap-12">
                             <img src={token.image} alt="img" className="img" />
                             <div className="content">
                                 <div className="title">
@@ -109,7 +109,7 @@ const Deposite = () => {
 
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item style-2 gap-12">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item style-2 gap-12">
                             <img src={token.image} alt="img" className="img" />
                             <div className="content">
                                 <div className="title">
@@ -142,7 +142,7 @@ const Deposite = () => {
 
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item style-2 gap-12">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item style-2 gap-12">
                             <img src={token.image} alt="img" className="img" />
                             <div className="content">
                                 <div className="title">
@@ -174,7 +174,7 @@ const Deposite = () => {
                 }
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item justify-content-between">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item justify-content-between">
                             <div className="d-flex align-items-center gap-12 flex-1">
                                 <h4 className="text-primary">{index}</h4>
                                 <p>
@@ -209,7 +209,7 @@ const Deposite = () => {
                 }
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item justify-content-between">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item justify-content-between">
                             <div className="d-flex align-items-center gap-12 flex-1">
                                 <h4 className="text-primary">{index}</h4>
                                 <p>
@@ -233,7 +233,7 @@ const Deposite = () => {
                 return (
                     <>
                    <ul>
-                    <li style={{listStyleL: "none"}} key={index}>
+                    <li className="m-2" style={{listStyleL: "none"}} key={index}>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                     </li>
                    </ul>
@@ -280,7 +280,7 @@ const Deposite = () => {
 
                 return (
                     <li key={index} style={{ marginTop: '18px' }}>
-                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#detailChart" className="coin-item style-2 gap-12">
+                        <a onClick={updateT} data-bs-toggle="modal" data-bs-target="#listChain" className="coin-item style-2 gap-12">
                             <img src={filteredItem.image} alt="img" className="img" />
                             <div className="content">
                                 <div className="title">
