@@ -239,7 +239,7 @@ const Deposite = () => {
                 return (
                     <>
                         <Swiper
-                            slidesPerView={2.4}
+                            slidesPerView={4}
                             spaceBetween={7}
                             freeMode={true}
                             pagination={{
