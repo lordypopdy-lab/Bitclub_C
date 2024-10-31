@@ -340,7 +340,9 @@ const Deposite = () => {
                 <div className="tf-container">
                     <h4>Trending</h4>
                     <div className="btn-group mt-3">
-                        {chainLists} <br />
+                        {chainLists}
+                    </div>
+                    <div className="btn-group mt-3">
                         {chainList2}
                     </div>
                     <div className="mt-20">
