@@ -238,24 +238,24 @@ const Deposite = () => {
             const chainList = datas.map((token, index) => {
                 return (
                     <>
-                        <Swiper
-                            slidesPerView={12}
-                            spaceBetween={10}
-                            freeMode={true}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            modules={[FreeMode]}
-                            className="mySwiper"
-                        >
-                            <ul>
-                                <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                        <ul>
+                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                <Swiper
+                                    slidesPerView={12}
+                                    spaceBetween={10}
+                                    freeMode={true}
+                                    pagination={{
+                                        clickable: true,
+                                    }}
+                                    modules={[FreeMode]}
+                                    className="mySwiper"
+                                >
                                     <SwiperSlide>
                                         <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                                     </SwiperSlide>
-                                </li>
-                            </ul>
-                        </Swiper>
+                                </Swiper>
+                            </li>
+                        </ul>
                     </>
                 )
             })
@@ -568,7 +568,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                            <h6 style={{marginBottom: "-18px"}} className="text-button mt-4 text-center">Choose Network</h6> <hr />
+                            <h6 style={{ marginBottom: "-16px" }} className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
