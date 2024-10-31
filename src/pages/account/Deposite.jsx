@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { FreeMode } from 'swiper/modules';
 import FadeLoader from 'react-spinners/FadeLoader';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
