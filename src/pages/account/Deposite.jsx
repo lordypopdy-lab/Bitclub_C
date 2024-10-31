@@ -342,7 +342,7 @@ const Deposite = () => {
                     <div className="btn-group mt-3">
                         {chainLists}
                     </div>
-                    <div style={{marginTop: '-8px'}} className="btn-group">
+                    <div className="btn-group">
                         {chainList2}
                     </div>
                     <div className="mt-20">
