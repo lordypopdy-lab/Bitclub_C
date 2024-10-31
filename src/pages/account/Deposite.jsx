@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
 
 import logo144 from '../../images/logo/logo144.png';
 import coin1 from "../../images/coin/coin1.jpg";
@@ -233,9 +238,22 @@ const Deposite = () => {
                 return (
                     <>
                    <ul>
+                   <Swiper
+                        slidesPerView={2.4}
+                        spaceBetween={7}
+                        freeMode={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[FreeMode]}
+                        className="mySwiper"
+                    >
+                         <SwiperSlide>
                     <li className="m-1" style={{listStyleL: "none"}} key={index}>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                     </li>
+                    </SwiperSlide>
+                    </Swiper> 
                    </ul>
                     </>
                 )
