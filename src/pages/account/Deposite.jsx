@@ -233,7 +233,7 @@ const Deposite = () => {
                 return (
                     <>
                    <ul>
-                    <li className="m-2" style={{listStyleL: "none"}} key={index}>
+                    <li className="m-1" style={{listStyleL: "none"}} key={index}>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                     </li>
                    </ul>
@@ -247,7 +247,7 @@ const Deposite = () => {
             setList3(tokenList3.slice(50, 80))
             setList4(tokenList4.slice(70, 99))
             setList5(tokenList5.slice(50, 60))
-            setChainList(chainList.slice(0, 4));
+            setChainList(chainList.slice(0, 5));
             setLoading(false);
         } catch (error) {
             console.log(error);
@@ -326,11 +326,6 @@ const Deposite = () => {
                     <h4>Trending</h4>
                     <div className="btn-group mt-3">
                         {chainLists}
-                        {/* <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BTC</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">ETH</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USD</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USDT</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BNB</button> */}
                     </div>
                     <div className="mt-20">
                         <div className="line-bt">
@@ -554,7 +549,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                        <h6 className="text-button mt-4 text-center">Choose Network</h6> <hr />
+                        <h6 className="text-button mt-5 mb-0 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{marginTop: '-20px'}}>
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
