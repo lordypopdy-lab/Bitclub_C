@@ -594,7 +594,7 @@ const Deposite = () => {
                                     </div>
                                 </a>
                                 <p className="accent-box-v6 mb-3 bg-dark d-flex justify-content-between align-items-center">
-                                    <span className="icon-camera icon"></span>
+                                    <span className="icon-warning icon"></span>
                                     Please note that only supported networks on Bitblub platform are shown, if you deposit via another Network your assets may lost.
                                 </p>
                             </div>
