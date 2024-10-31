@@ -262,7 +262,7 @@ const Deposite = () => {
             setList4(tokenList4.slice(70, 99))
             setList5(tokenList5.slice(50, 60))
             setChainList(chainList.slice(0, 4));
-            setChainList2(chainList2.slice(0, 4));
+            setChainList2(chainList2.slice(5, 9));
             setLoading(false);
         } catch (error) {
             console.log(error);
