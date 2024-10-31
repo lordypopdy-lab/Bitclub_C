@@ -247,7 +247,7 @@ const Deposite = () => {
                 return (
                     <>
                         <ul>
-                            <li className="m-2" style={{ listStyleL: "none" }} key={index}>
+                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                             </li>
                         </ul>
@@ -342,7 +342,7 @@ const Deposite = () => {
                     <div className="btn-group mt-3">
                         {chainLists}
                     </div>
-                    <div className="btn-group">
+                    <div style={{marginTop: '-14px'}} className="btn-group">
                         {chainList2}
                     </div>
                     <div className="mt-20">
