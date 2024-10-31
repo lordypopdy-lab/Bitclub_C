@@ -28,6 +28,7 @@ const Deposite = () => {
     const [list5, setList5] = useState(null);
     const [tokens, setTokens] = useState([]);
     const [search, setSearch] = useState('');
+    const [chainLists, setChainList] = useState('');
 
     const [details, setDetails] = useState({
         name: '',
@@ -226,6 +227,18 @@ const Deposite = () => {
                         </a>
                     </li>
                 )
+            });
+
+            const chainList = datas.map((token, index)=>{
+                return (
+                    <>
+                   <ul>
+                    <li style={{listStyleL: "none"}} key={index}>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                    </li>
+                   </ul>
+                    </>
+                )
             })
 
             setTokens(datas);
@@ -234,6 +247,7 @@ const Deposite = () => {
             setList3(tokenList3.slice(50, 80))
             setList4(tokenList4.slice(70, 99))
             setList5(tokenList5.slice(50, 60))
+            setChainList(chainList.slice(0, 4));
             setLoading(false);
         } catch (error) {
             console.log(error);
@@ -311,11 +325,12 @@ const Deposite = () => {
                 <div className="tf-container">
                     <h4>Trending</h4>
                     <div className="btn-group mt-3">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BTC</button>
+                        {chainLists}
+                        {/* <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BTC</button>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">ETH</button>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USD</button>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">USDT</button>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BNB</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">BNB</button> */}
                     </div>
                     <div className="mt-20">
                         <div className="line-bt">
@@ -541,7 +556,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                         <h6 className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{marginTop: '-20px'}}>
-                                <a href="#" className="accent-box-v6 bg-dark mb-3 d-flex justify-content-between align-items-center">
+                                <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -566,6 +581,7 @@ const Deposite = () => {
                                     </div>
                                 </a>
                                 <p className="accent-box-v6 mb-3 bg-dark d-flex justify-content-between align-items-center">
+                                <span className="icon-camera icon"></span>
                                     Please note that only supported networks on Bitblub platform are shown, if you deposit via another Network your assets may lost.
                                 </p>
                             </div>
