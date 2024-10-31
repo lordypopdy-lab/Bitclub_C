@@ -371,7 +371,7 @@ const Deposite = () => {
 
                         <div className="tab-content mt-8 mb-16">
                             <div className="tab-pane fade show active" id="all" role="tabpanel">
-                                <div className="mt-4 mb-4 search-box box-input-field">
+                                <div className="mt-4 mb-5 search-box box-input-field">
                                     <a href="/home" className="icon-search"></a>
                                     <input
                                         type="text"
