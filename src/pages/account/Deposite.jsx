@@ -247,7 +247,7 @@ const Deposite = () => {
                 return (
                     <>
                         <ul>
-                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                            <li className="m-2" style={{ listStyleL: "none" }} key={index}>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                             </li>
                         </ul>
@@ -342,7 +342,7 @@ const Deposite = () => {
                     <div className="btn-group mt-3">
                         {chainLists}
                     </div>
-                    <div className="btn-group mt-3">
+                    <div className="btn-group mt-1">
                         {chainList2}
                     </div>
                     <div className="mt-20">
@@ -567,7 +567,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                            <h6 style={{ marginBottom: "-16px" }} className="text-button mt-4 text-center">Choose Network</h6> <hr />
+                            <h6 style={{ marginBottom: "-16px" }} className="text-button mt-4 m-2 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
