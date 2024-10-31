@@ -30,6 +30,7 @@ const Deposite = () => {
     const [tokens, setTokens] = useState([]);
     const [search, setSearch] = useState('');
     const [chainLists, setChainList] = useState('');
+    const [chainList2, setChainList2] = useState('');
 
     const [details, setDetails] = useState({
         name: '',
@@ -242,13 +243,26 @@ const Deposite = () => {
                 )
             })
 
+            const chainList2 = datas.map((token, index) => {
+                return (
+                    <>
+                        <ul>
+                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                            </li>
+                        </ul>
+                    </>
+                )
+            })
+
             setTokens(datas);
             setList1(tokenList1);
             setList2(tokenList2.slice(0, 9));
             setList3(tokenList3.slice(50, 80))
             setList4(tokenList4.slice(70, 99))
             setList5(tokenList5.slice(50, 60))
-            setChainList(chainList.slice(0, 5));
+            setChainList(chainList.slice(0, 4));
+            setChainList2(chainList2.slice(0, 4));
             setLoading(false);
         } catch (error) {
             console.log(error);
@@ -326,7 +340,8 @@ const Deposite = () => {
                 <div className="tf-container">
                     <h4>Trending</h4>
                     <div className="btn-group mt-3">
-                        {chainLists}
+                        {chainLists} <br />
+                        {chainList2}
                     </div>
                     <div className="mt-20">
                         <div className="line-bt">
