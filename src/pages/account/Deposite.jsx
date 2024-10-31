@@ -249,11 +249,11 @@ const Deposite = () => {
                             className="mySwiper"
                         >
                             <ul>
-                                <SwiperSlide>
-                                    <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                    <SwiperSlide>
                                         <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
-                                    </li>
-                                </SwiperSlide>
+                                    </SwiperSlide>
+                                </li>
                             </ul>
                         </Swiper>
                     </>
