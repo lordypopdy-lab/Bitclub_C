@@ -235,27 +235,27 @@ const Deposite = () => {
                 )
             });
 
-            const chainList = datas.map((token, index)=>{
+            const chainList = datas.map((token, index) => {
                 return (
                     <>
-                   <ul>
-                   <Swiper
-                        slidesPerView={2.4}
-                        spaceBetween={7}
-                        freeMode={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[FreeMode]}
-                        className="mySwiper"
-                    >
-                         <SwiperSlide>
-                    <li className="m-1" style={{listStyleL: "none"}} key={index}>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
-                    </li>
-                    </SwiperSlide>
-                    </Swiper> 
-                   </ul>
+                        <Swiper
+                            slidesPerView={2.4}
+                            spaceBetween={7}
+                            freeMode={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[FreeMode]}
+                            className="mySwiper"
+                        >
+                            <ul>
+                                <SwiperSlide>
+                                    <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn m-1 btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                                    </li>
+                                </SwiperSlide>
+                            </ul>
+                        </Swiper>
                     </>
                 )
             })
@@ -568,8 +568,8 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                        <h6 className="text-button mt-5 mb-0 text-center">Choose Network</h6> <hr />
-                            <div className="bottom" style={{marginTop: '-20px'}}>
+                            <h6 className="text-button mt-5 mb-0 text-center">Choose Network</h6> <hr />
+                            <div className="bottom" style={{ marginTop: '-20px' }}>
                                 <a href="#" className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
@@ -595,7 +595,7 @@ const Deposite = () => {
                                     </div>
                                 </a>
                                 <p className="accent-box-v6 mb-3 bg-dark d-flex justify-content-between align-items-center">
-                                <span className="icon-camera icon"></span>
+                                    <span className="icon-camera icon"></span>
                                     Please note that only supported networks on Bitblub platform are shown, if you deposit via another Network your assets may lost.
                                 </p>
                             </div>
