@@ -403,9 +403,8 @@ tokenFormatter();
 
 const getData = localStorage.getItem('tokens');
 if(!getData){
-location.href='/home'
+location.href='/login'
 }
-
 if (!localStorage.getItem('email')) { location.href = '/login'; }
 
     return (

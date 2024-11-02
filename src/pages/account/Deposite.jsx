@@ -3,7 +3,6 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
 
-
 import logo144 from '../../images/logo/logo144.png';
 import coin1 from "../../images/coin/coin1.jpg";
 import coin2 from "../../images/coin/coin2.jpg";
@@ -18,6 +17,30 @@ import coin10 from "../../images/coin/coin10.jpg";
 import coin11 from "../../images/coin/coin11.jpg";
 import coin12 from "../../images/coin/coin12.jpg";
 import coin13 from "../../images/coin/coin13.jpg";
+import {
+    EmailShareButton,
+    FacebookMessengerShareButton,
+    FacebookShareButton,
+    GabShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+} from "react-share";
+
 
 const Deposite = () => {
     if (!localStorage.getItem('email')) { location.href = '/login'; }
@@ -32,6 +55,7 @@ const Deposite = () => {
     const [showAll, setShowAll] = useState(false);
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
+    const [userAddress, setUserAddress] = useState('');
 
     const [details, setDetails] = useState({
         name: '',
@@ -320,6 +344,20 @@ const Deposite = () => {
         toast.success("Trade Exchange is Comming Soon!");
     }
 
+    const copyAddrress = async () => {
+        if (userAddress !== '') {
+            try {
+                await navigator.clipboard.writeText(userAddress);
+                toast.success('Address Copied!');
+            } catch (error) {
+                toast.error('Fail to Copy!');
+            }
+        } else {
+            toast.error('Failed to Copy, No Address Detected')
+        }
+    }
+
+
     return (
         <>
 
@@ -331,162 +369,338 @@ const Deposite = () => {
             </div>
             {/* <!-- /preload End -->  */}
 
-    {showAll === false ?  <>
-        <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">
-                <h3 className="d-flex gap-12">
-                    <a href="#">Deposit</a>
-                    <a onClick={TradeExchang} className="text-secondary">Crypto</a>
-                </h3>
-                <i className="icon-funnel text-white" data-bs-toggle="modal" data-bs-target="#filter"></i>
-            </div>
-            <div className="pt-55 pb-80">
-                <div className="tf-container">
-                    <h4>Trending</h4>
-                    <div className="btn-group mt-3">
-                        {chainLists}
+            {showAll === false ?
+                <>
+                    <div className="header-style2 fixed-top d-flex align-items-center justify-content-between bg-surface">
+                        <h3 className="d-flex gap-12">
+                            <a href="#">Deposit</a>
+                            <a onClick={TradeExchang} className="text-secondary">Crypto</a>
+                        </h3>
+                        <i className="icon-funnel text-white" data-bs-toggle="modal" data-bs-target="#filter"></i>
                     </div>
-                    <div className="btn-group">
-                        {chainList2}
-                    </div>
-                    <div className="mt-20">
-                        <div className="line-bt">
-                            <div className="swiper swiper-wrapper-r market-swiper" data-space-between="20" data-preview="auto">
-                                <div className="swiper-wrapper menu-tab-v3" role="tablist">
-                                    <div className="swiper-slide nav-link active" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#all" role="tab" aria-controls="all" aria-selected="true">
-                                        All
+                    <div className="pt-55 pb-80">
+                        <div className="tf-container">
+                            <h4>Trending</h4>
+                            <div className="btn-group mt-3">
+                                {chainLists}
+                            </div>
+                            <div className="btn-group">
+                                {chainList2}
+                            </div>
+                            <div className="mt-20">
+                                <div className="line-bt">
+                                    <div className="swiper swiper-wrapper-r market-swiper" data-space-between="20" data-preview="auto">
+                                        <div className="swiper-wrapper menu-tab-v3" role="tablist">
+                                            <div className="swiper-slide nav-link active" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#all" role="tab" aria-controls="all" aria-selected="true">
+                                                All
+                                            </div>
+                                            <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#favorites" role="tab" aria-controls="favorites" aria-selected="false">
+                                                <i className="icon-star"></i>
+                                                Favorites
+                                            </div>
+                                            <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#attractive" role="tab" aria-controls="attractive" aria-selected="false">
+                                                Attractive
+                                            </div>
+                                            <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#meme" role="tab" aria-controls="meme" aria-selected="false">
+                                                Meme
+                                            </div>
+                                            <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#staking" role="tab" aria-controls="staking" aria-selected="false">
+                                                Staking
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#favorites" role="tab" aria-controls="favorites" aria-selected="false">
-                                        <i className="icon-star"></i>
-                                        Favorites
+                                </div>
+
+                                <div className="tab-content mt-8 mb-16">
+                                    <div className="tab-pane fade show active" id="all" role="tabpanel">
+                                        <div className="mt-4 mb-4 search-box box-input-field">
+                                            <a href="/home" className="icon-search"></a>
+                                            <input
+                                                type="text"
+                                                placeholder="Swap over 100+ tokens on more than 10 chains"
+                                                required
+                                                className="clear-ip"
+                                                value={search}
+                                                onChange={searchFunction}
+                                            />
+                                            <i className="icon-close"></i>
+                                        </div>
+                                        <div className="d-flex mt-3 justify-content-between">
+                                            Name/Market
+                                            <p className="d-flex gap-8">
+                                                <span>Current Price(USD)/</span>
+                                                <span>Change(%)</span>
+                                            </p>
+                                        </div>
+                                        <ul className="mt-16">
+                                            <FadeLoader
+                                                color="#36d7b7"
+                                                loading={loading}
+                                                speedMultiplier={3}
+                                                style={{ textAlign: 'center', position: 'relative', marginLeft: '50%' }}
+                                            />
+                                            {list1}
+                                        </ul>
                                     </div>
-                                    <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#attractive" role="tab" aria-controls="attractive" aria-selected="false">
-                                        Attractive
+                                    <div className="tab-pane fade" id="favorites" role="tabpanel">
+                                        <div className="d-flex justify-content-between">
+                                            Name/Market
+                                            <p className="d-flex gap-8">
+                                                <span>Current Price(USD)/</span>
+                                                <span>Change(%)</span>
+                                            </p>
+                                        </div>
+                                        <ul className="mt-16">
+                                            {list2}
+                                        </ul>
                                     </div>
-                                    <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#meme" role="tab" aria-controls="meme" aria-selected="false">
-                                        Meme
+                                    <div className="tab-pane fade" id="attractive" role="tabpanel">
+                                        <div className="d-flex justify-content-between">
+                                            Name/Market
+                                            <p className="d-flex gap-8">
+                                                <span>Current Price(USD)/</span>
+                                                <span>Change(%)</span>
+                                            </p>
+                                        </div>
+                                        <ul className="mt-16">
+                                            {list4}
+                                        </ul>
                                     </div>
-                                    <div className="swiper-slide nav-link" style={{ marginRight: '10px' }} data-bs-toggle="tab" data-bs-target="#staking" role="tab" aria-controls="staking" aria-selected="false">
-                                        Staking
+                                    <div className="tab-pane fade" id="meme" role="tabpanel">
+                                        <div className="d-flex justify-content-between">
+                                            Name/Market
+                                            <p className="d-flex gap-8">
+                                                <span>Current Price(USD)/</span>
+                                                <span>Change(%)</span>
+                                            </p>
+                                        </div>
+                                        <ul className="mt-16">
+                                            {list3}
+                                        </ul>
+                                    </div>
+                                    <div className="tab-pane fade" id="staking" role="tabpanel">
+                                        <div className="d-flex justify-content-between">
+                                            Name/Market
+                                            <p className="d-flex gap-8">
+                                                <span>Current Price(USD)/</span>
+                                                <span>Change(%)</span>
+                                            </p>
+                                        </div>
+                                        <ul className="mt-16">
+                                            {list5}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="tab-content mt-8 mb-16">
-                            <div className="tab-pane fade show active" id="all" role="tabpanel">
-                                <div className="mt-4 mb-4 search-box box-input-field">
-                                    <a href="/home" className="icon-search"></a>
-                                    <input
+                    <div className="menubar-footer footer-fixed">
+                        <ul className="inner-bar">
+                            <li>
+                                <a href="/Home">
+                                    <i className="icon icon-home2"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li className="">
+                                <a href="/Exchange">
+                                    <i className="icon icon-exchange"></i>
+                                    Exchange
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Earn">
+                                    <i className="icon icon-earn2"></i>
+                                    Earn
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Wallet">
+                                    <i className="icon icon-wallet"></i>
+                                    Wallet
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </> :
+
+                <>
+                    <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
+                        <a href="javascript:void(0);" className="left back-btn"><i className="icon-left-btn"></i></a>
+                        <h3>QR code</h3>
+                        <a href="javascript:void(0);" className="right"><i style={{ fontSize: '27px' }} className="icon-exchange p-1"></i> Receive</a>
+                    </div>
+                    <div className="pt-45 pb-16">
+                        <div className="tf-container">
+                            <div className="mt-40 banner-qr">
+                                <img src={bannerqrcode} alt="img" />
+                            </div>
+                        </div>
+                        <ul className="mt-10 accent-box line-border">
+                            <li>
+                                <p className="d-flex align-items-center text-small gap-4">Deposite Address <i className="icon-question fs-16 text-secondary"></i> </p>
+                                <InputGroup className="mb-2 mt-3">
+                                    <Form.Control
                                         type="text"
-                                        placeholder="Swap over 100+ tokens on more than 10 chains"
-                                        required
-                                        className="clear-ip"
-                                        value={search}
-                                        onChange={searchFunction}
+                                        value={userAddress !== null ? userAddress : ''}
+                                        aria-describedby="basic-addon1"
                                     />
-                                    <i className="icon-close"></i>
+                                    <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
+                                </InputGroup>
+                            </li>
+                            <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
+                        </ul>
+                    </div>
+
+
+                    {/* <!-- Share Links --> */}
+                    <div className="modal fade modalRight" id="share">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
+                                    <span className="left" data-bs-dismiss="modal" aria-hidden="true"><i className="icon-left-btn"></i></span>
+                                    <h3>Share Address</h3>
                                 </div>
-                                <div className="d-flex mt-3 justify-content-between">
-                                    Name/Market
-                                    <p className="d-flex gap-8">
-                                        <span>Current Price(USD)/</span>
-                                        <span>Change(%)</span>
-                                    </p>
+                                <div className="overflow-auto pt-45 pb-16">
+                                    <div className="tf-container">
+                                        <ul className="mt-12 grid-4 rg-16 cg-25">
+                                            <li>
+                                                <TwitterShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <TwitterIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Twiter</p>
+                                                </TwitterShareButton>
+                                            </li>
+                                            <li>
+                                                <EmailShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <EmailIcon size={32} round={true} />
+                                                    <p className="text-center text-light">E-mail</p>
+                                                </EmailShareButton>
+                                            </li>
+                                            <li>
+                                                <WhatsappShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <WhatsappIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Whatsapp</p>
+                                                </WhatsappShareButton>
+                                            </li>
+                                            <li>
+                                                <FacebookMessengerShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <FacebookMessengerIcon size={32} round={true} />
+                                                    <p className="text-center text-light">facebook messanger</p>
+                                                </FacebookMessengerShareButton>
+                                            </li>
+                                            <li>
+                                                <FacebookShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <FacebookIcon size={32} round={true} />
+                                                    <p className="text-center text-light">facebook</p>
+                                                </FacebookShareButton>
+                                            </li>
+                                            <li>
+                                                <TelegramShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <TelegramIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Telegram</p>
+                                                </TelegramShareButton>
+                                            </li>
+                                            <li>
+                                                <MailruShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <MailruIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Mail</p>
+                                                </MailruShareButton>
+                                            </li>
+                                            <li>
+                                                <InstapaperShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <InstapaperIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Instapaper</p>
+                                                </InstapaperShareButton>
+                                            </li>
+                                            <li>
+                                                <GabShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <GabIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Gab</p>
+                                                </GabShareButton>
+                                            </li>
+                                            <li>
+                                                <HatenaShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <HatenaIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Hatena</p>
+                                                </HatenaShareButton>
+                                            </li>
+                                            <li>
+                                                <LinkedinShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <LinkedinIcon size={32} round={true} />
+                                                    <p className="text-center text-light">LinkedIn</p>
+                                                </LinkedinShareButton>
+                                            </li>
+                                            <li>
+                                                <LineShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <LineIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Line</p>
+                                                </LineShareButton>
+                                            </li>
+                                            <li>
+                                                <LivejournalShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <LivejournalIcon size={32} round={true} />
+                                                    <p className="text-center text-light">live jornal</p>
+                                                </LivejournalShareButton>
+                                            </li>
+                                            <li>
+                                                <OKShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <OKIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Ok</p>
+                                                </OKShareButton>
+                                            </li>
+                                            <li>
+                                                <PinterestShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <PinterestIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Pinterest</p>
+                                                </PinterestShareButton>
+                                            </li>
+                                            <li>
+                                                <PocketShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <PocketIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Pocket</p>
+                                                </PocketShareButton>
+                                            </li>
+                                            <li>
+                                                <RedditShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <RedditIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Redit</p>
+                                                </RedditShareButton>
+                                            </li>
+                                            <li>
+                                                <TumblrShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <TumblrIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Tumb</p>
+                                                </TumblrShareButton>
+                                            </li>
+                                            <li>
+                                                <ViberShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <ViberIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Viber</p>
+                                                </ViberShareButton>
+                                            </li>
+                                            <li>
+                                                <VKShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <TwitterIcon size={32} round={true} />
+                                                    <p className="text-center text-light">VK</p>
+                                                </VKShareButton>
+                                            </li>
+                                            <li>
+                                                <WorkplaceShareButton className="tf-list-item d-flex flex-column gap-4 align-items-center">
+                                                    <WorkplaceIcon size={32} round={true} />
+                                                    <p className="text-center text-light">Workplace</p>
+                                                </WorkplaceShareButton>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <ul className="mt-16">
-                                    <FadeLoader
-                                        color="#36d7b7"
-                                        loading={loading}
-                                        speedMultiplier={3}
-                                        style={{ textAlign: 'center', position: 'relative', marginLeft: '50%' }}
-                                    />
-                                    {list1}
-                                </ul>
-                            </div>
-                            <div className="tab-pane fade" id="favorites" role="tabpanel">
-                                <div className="d-flex justify-content-between">
-                                    Name/Market
-                                    <p className="d-flex gap-8">
-                                        <span>Current Price(USD)/</span>
-                                        <span>Change(%)</span>
-                                    </p>
-                                </div>
-                                <ul className="mt-16">
-                                    {list2}
-                                </ul>
-                            </div>
-                            <div className="tab-pane fade" id="attractive" role="tabpanel">
-                                <div className="d-flex justify-content-between">
-                                    Name/Market
-                                    <p className="d-flex gap-8">
-                                        <span>Current Price(USD)/</span>
-                                        <span>Change(%)</span>
-                                    </p>
-                                </div>
-                                <ul className="mt-16">
-                                    {list4}
-                                </ul>
-                            </div>
-                            <div className="tab-pane fade" id="meme" role="tabpanel">
-                                <div className="d-flex justify-content-between">
-                                    Name/Market
-                                    <p className="d-flex gap-8">
-                                        <span>Current Price(USD)/</span>
-                                        <span>Change(%)</span>
-                                    </p>
-                                </div>
-                                <ul className="mt-16">
-                                    {list3}
-                                </ul>
-                            </div>
-                            <div className="tab-pane fade" id="staking" role="tabpanel">
-                                <div className="d-flex justify-content-between">
-                                    Name/Market
-                                    <p className="d-flex gap-8">
-                                        <span>Current Price(USD)/</span>
-                                        <span>Change(%)</span>
-                                    </p>
-                                </div>
-                                <ul className="mt-16">
-                                    {list5}
-                                </ul>
+
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </>
 
-            <div className="menubar-footer footer-fixed">
-                <ul className="inner-bar">
-                    <li>
-                        <a href="/Home">
-                            <i className="icon icon-home2"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li className="">
-                        <a href="/Exchange">
-                            <i className="icon icon-exchange"></i>
-                            Exchange
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Earn">
-                            <i className="icon icon-earn2"></i>
-                            Earn
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Wallet">
-                            <i className="icon icon-wallet"></i>
-                            Wallet
-                        </a>
-                    </li>
-                </ul>
-            </div>
-    </> : ''
-    
-    }
+            }
 
             {/* <!--chart detail  --> */}
             <div className="modal fade action-sheet" id="detailChart">
@@ -575,7 +789,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                             <h6 style={{ marginBottom: "-14px" }} className="text-button mt-4 text-center">Choose Network</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
-                                <a href="#" onClick={(()=>{setShowAll(true)})} className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -583,7 +797,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(()=>{setShowAll(true)})} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -591,7 +805,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(()=>{setShowAll(true)})}  className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
