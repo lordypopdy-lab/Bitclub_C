@@ -598,7 +598,7 @@ const Deposite = () => {
                                 </div>
                             </a>
                         </div>
-                        <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
+                        <a href="javascript:void(0);" className="tf-btn lg mt-20" style={{background: '#25C866'}} data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
                     </div>
 
 
