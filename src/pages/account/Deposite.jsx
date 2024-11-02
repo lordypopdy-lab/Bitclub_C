@@ -81,7 +81,7 @@ const Deposite = () => {
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
     const [userAddress, setUserAddress] = useState('');
-    const [depositInfo, setDepositInfo] = {minDeposit: null, symbol: ''}
+    const [depositInfo, setDepositInfo] = useState({minDeposit: null, symbol: ''})
 
     const [details, setDetails] = useState({
         name: '',
