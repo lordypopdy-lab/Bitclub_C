@@ -554,7 +554,7 @@ const Deposite = () => {
                     <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
                         <a href="javascript:void(0);" className="left back-btn"><i className="icon-left-btn"></i></a>
                         <h3>QR code</h3>
-                        <a href="javascript:void(0);" className="right"><i style={{ fontSize: '27px' }} className="icon-exchange p-1"></i> Receive</a>
+                        <a href="javascript:void(0);" className="right"> Buy Crypto <i class="bi bi-arrow-right"></i></a>
                     </div>
                     <div className="pt-45 pb-16">
                         <div className="tf-container">
