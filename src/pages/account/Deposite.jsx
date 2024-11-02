@@ -81,7 +81,7 @@ const Deposite = () => {
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
     const [userAddress, setUserAddress] = useState('');
-    const [depositInfo, setDepositInfo] = useState({ minDeposit: null, symbol: '' })
+    const [depositInfo, setDepositInfo] = useState({ minDeposit: null, symbol: '', blockComfirmation: '' })
 
     const [details, setDetails] = useState({
         name: '',
@@ -588,6 +588,12 @@ const Deposite = () => {
                                     </p>
                                     <p className="mt-4 text-xsmall">
                                         The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded.
+                                    </p>
+                                    <p className="mt-4 text-xsmall">
+                                        if this current address is used, {depositInfo.blockComfirmation} block comfirmations are required before your deposited funds can be added to your available balance. 
+                                    </p>
+                                    <p className="mt-4 text-xsmall">
+                                    Warining: Do not use your Bitclub wallet to deposit address to receive validator rewards. Such transfer will not be credited or refunded.
                                     </p>
                                 </div>
                             </a>
