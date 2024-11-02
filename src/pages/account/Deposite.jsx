@@ -600,7 +600,7 @@ const Deposite = () => {
                         </div>
                         <div className="btn-group">
                             <button className="btn text-light border">Copy Address</button>
-                            <button data-bs-toggle="modal" data-bs-target="#share" className="btn">Share Address</button>
+                            <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn text-dark">Share Address</button>
                         </div>
                     </div>
 
