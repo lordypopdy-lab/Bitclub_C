@@ -580,13 +580,18 @@ const Deposite = () => {
                             <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
                                 <div className="mt-12">
                                     <p className="mt-4">
-                                    <a href="#" className="text-small"><span style={{ color: '#25C866' }}>Notice:</span></a>
-                                     <br /><br />
-                                    <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
-                                        laundring measures.</b> <br /><br />
-                                    The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
-                                    <br /><br />
-                                    Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.    
+                                        <a href="#" className="text-small"><span style={{ color: '#25C866' }}>Notice:</span></a>
+                                        <br />
+                                        <b className=""> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
+                                            laundring measures.</b>
+                                        <br />
+                                        <span className="">
+                                            The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded.
+                                        </span>
+                                        <br />
+                                        <span className="">
+                                            Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
+                                        </span>
                                     </p>
                                 </div>
                             </a>
