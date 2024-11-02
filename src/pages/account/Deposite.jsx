@@ -575,27 +575,35 @@ const Deposite = () => {
                                     <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
                                 </InputGroup>
                             </li>
-                            {/* <p className="text-xsmall text-white mt-20">
-                                Notice: <br /><br />
-                                <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
-                                    laundring measures.</b> <br /><br />
-                                The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
-                                Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
-                            </p> */}
                         </ul>
-
-                        <ul className="mt-4 accent-box bg-menuDark">
+                        <div className="accent-box-v5 p-0 bg-menuDark" style={{ width: '100%' }}>
+                            <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
+                                <div className="mt-12">
+                                    <p className="mt-4">
+                                    <a href="#" className="text-small"><span style={{ color: '#25C866' }}>Notice:</span></a>
+                                     <br /><br />
+                                    <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
+                                        laundring measures.</b> <br /><br />
+                                    The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
+                                    <br /><br />
+                                    Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.    
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        {/* <ul className="mt-4 accent-box bg-menuDark">
                             <li className="trade-list-item">
                                 <p className="text-xsmall">
-                                Notice: <br /><br />
-                                        <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
-                                            laundring measures.</b> <br /><br />
-                                        The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
-                                        Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
+                                    Notice: <br /><br />
+                                    <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
+                                        laundring measures.</b> <br /><br />
+                                    The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
+                                    <br /><br />
+                                    Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
                                 </p>
                             </li>
-                            <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
-                        </ul>
+                        </ul> */}
+                        <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
                     </div>
 
 
