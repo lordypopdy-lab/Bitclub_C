@@ -563,7 +563,7 @@ const Deposite = () => {
                                 <img src={bannerqrcode} alt="img" />
                             </div>
                         </div>
-                        <ul className="mt-10 bg-menuDark accent-box line-border">
+                        <ul className="mt-10 accent-box line-border">
                             <li>
                                 <p className="d-flex align-items-center text-small gap-4">Deposite Address <i className="icon-question fs-16 text-secondary"></i> </p>
                                 <InputGroup className="mb-2 mt-3">
