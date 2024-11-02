@@ -590,15 +590,18 @@ const Deposite = () => {
                                         The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded.
                                     </p>
                                     <p className="mt-4 text-xsmall">
-                                        if this current address is used, {depositInfo.blockComfirmation} block comfirmations are required before your deposited funds can be added to your available balance. 
+                                        if this current address is used, {depositInfo.blockComfirmation} block comfirmations are required before your deposited funds can be added to your available balance.
                                     </p>
                                     <p className="mt-4 text-xsmall">
-                                    Warining: Do not use your Bitclub wallet to deposit address to receive validator rewards. Such transfer will not be credited or refunded.
+                                        Warining: Do not use your Bitclub wallet to deposit address to receive validator rewards. Such transfer will not be credited or refunded.
                                     </p>
                                 </div>
                             </a>
                         </div>
-                        <a href="javascript:void(0);" className="tf-btn lg mt-20" style={{background: '#25C866'}} data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
+                        <div className="btn-group">
+                            <button className="btn">Copy Address</button>
+                            <button data-bs-toggle="modal" data-bs-target="#share" className="btn">Share Address</button>
+                        </div>
                     </div>
 
 
