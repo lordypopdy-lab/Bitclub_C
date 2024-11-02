@@ -580,19 +580,19 @@ const Deposite = () => {
                             <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
                                 <div className="mt-12">
                                     <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
-                                    <p className="mt-4 mb-4 text-xsmall">
-                                        <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
+                                    <p className="mt-4 mb-4 text-xsmall fw-600" style={{lineHeight: '8px'}}>
+                                        In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.
                                     </p>
-                                    <p className="mt-4 text-xsmall">
+                                    <p className="mt-4 text-xsmall" style={{lineHeight: '8px'}}>
                                         Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
                                     </p>
-                                    <p className="mt-4 text-xsmall">
+                                    <p className="mt-4 text-xsmall" style={{lineHeight: '8px'}}>
                                         The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded.
                                     </p>
-                                    <p className="mt-4 text-xsmall">
+                                    <p className="mt-4 text-xsmall" style={{lineHeight: '8px'}}>
                                         if this current address is used, {depositInfo.blockComfirmation} block comfirmations are required before your deposited funds can be added to your available balance.
                                     </p>
-                                    <p className="mt-4 text-xsmall">
+                                    <p className="mt-4 text-xsmall" style={{lineHeight: '8px'}}>
                                         Warining: Do not use your Bitclub wallet to deposit address to receive validator rewards. Such transfer will not be credited or refunded.
                                     </p>
                                 </div>
