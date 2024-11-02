@@ -43,6 +43,28 @@ import {
     WhatsappShareButton,
     WorkplaceShareButton,
 } from "react-share";
+import {
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    GabIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    WhatsappIcon,
+    WorkplaceIcon,
+    } from "react-share";
 
 
 const Deposite = () => {
