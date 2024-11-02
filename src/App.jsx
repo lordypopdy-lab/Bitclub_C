@@ -66,11 +66,12 @@ import { UserContextProvider } from '../context/UserContext';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
-import '../src/fonts/fonts.css'
-import '../src/fonts/font-icons.css'
-import '../src/css/bootstrap.min.css'
-import '../src/css/styles.css'
-import '../src/css/swiper-bundle.min.css'
+import '../src/fonts/fonts.css';
+import '../src/fonts/font-icons.css';
+import '../src/css/bootstrap.min.css';
+import '../src/css/styles.css';
+import '../src/css/swiper-bundle.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import { initializeSwiper } from "../src/js/carousel"
 
