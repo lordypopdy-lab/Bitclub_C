@@ -580,7 +580,7 @@ const Deposite = () => {
                             <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
                                 <div className="mt-12">
                                     <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
-                                    <p className="mt-4 mb-4 text-xsmall" style={{lineHeight: '8px'}}>
+                                    <p className="mt-4 mb-4 text-xsmall">
                                         <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
                                     </p>
                                     <p className="mt-4 text-xsmall">
@@ -597,10 +597,8 @@ const Deposite = () => {
                                     </p>
                                 </div>
                             </a>
-                            <div className="btn-group">
                             <button className="btn btn-small text-light border rounded">Copy Address</button>
                             <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn btn-small text-dark">Share Address</button>
-                        </div>
                         </div>
                     </div>
 
