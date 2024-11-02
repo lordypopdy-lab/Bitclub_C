@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import FadeLoader from 'react-spinners/FadeLoader';
+import InputGroup from 'react-bootstrap/InputGroup';
+import bannerqrcode from "../../images/banner/bannerqrcode.png"
 
 import logo144 from '../../images/logo/logo144.png';
 import coin1 from "../../images/coin/coin1.jpg";
