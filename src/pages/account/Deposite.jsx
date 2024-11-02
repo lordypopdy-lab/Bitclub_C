@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ethers } from 'ethers';
 import toast from 'react-hot-toast';
-import toast from "react-hot-toast";
 import Form from 'react-bootstrap/Form';
 import FadeLoader from 'react-spinners/FadeLoader';
 import InputGroup from 'react-bootstrap/InputGroup';
