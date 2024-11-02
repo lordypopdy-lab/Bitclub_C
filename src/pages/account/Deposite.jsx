@@ -580,8 +580,8 @@ const Deposite = () => {
                             <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
                                 <div className="mt-12">
                                     <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
-                                    <p className="mt-4 mb-4 text-xsmall fw-500" style={{lineHeight: '8px'}}>
-                                        In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.
+                                    <p className="mt-4 mb-4 text-xsmall" style={{lineHeight: '8px'}}>
+                                        <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
                                     </p>
                                     <p className="mt-4 text-xsmall">
                                         Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
@@ -597,10 +597,10 @@ const Deposite = () => {
                                     </p>
                                 </div>
                             </a>
-                        </div>
-                        <div className="btn-group">
-                            <button className="btn text-light border">Copy Address</button>
+                            <div className="btn-group">
+                            <button className="btn btn-small text-light border rounded">Copy Address</button>
                             <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn text-dark">Share Address</button>
+                        </div>
                         </div>
                     </div>
 
