@@ -64,7 +64,7 @@ import {
     ViberIcon,
     WhatsappIcon,
     WorkplaceIcon,
-    } from "react-share";
+} from "react-share";
 
 
 const Deposite = () => {
@@ -81,7 +81,7 @@ const Deposite = () => {
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
     const [userAddress, setUserAddress] = useState('');
-    const [depositInfo, setDepositInfo] = useState({minDeposit: null, symbol: ''})
+    const [depositInfo, setDepositInfo] = useState({ minDeposit: null, symbol: '' })
 
     const [details, setDetails] = useState({
         name: '',
@@ -563,7 +563,7 @@ const Deposite = () => {
                                 <img src={bannerqrcode} alt="img" />
                             </div>
                         </div>
-                        <ul className="mt-10 accent-box line-border">
+                        <ul className="mt-10 bg-dark accent-box line-border">
                             <li>
                                 <p className="d-flex align-items-center text-small gap-4">Deposite Address <i className="icon-question fs-16 text-secondary"></i> </p>
                                 <InputGroup className="mb-2 mt-3">
@@ -575,13 +575,25 @@ const Deposite = () => {
                                     <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
                                 </InputGroup>
                             </li>
-                            <p className="text-xsmall text-white mt-20">
+                            {/* <p className="text-xsmall text-white mt-20">
                                 Notice: <br /><br />
-                               <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money 
-                               laundring measures.</b> <br /><br />
-                                The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}` }. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
+                                <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
+                                    laundring measures.</b> <br /><br />
+                                The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
                                 Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
-                            </p>
+                            </p> */}
+                        </ul>
+
+                        <ul className="mt-4 accent-box bg-dark">
+                            <li className="trade-list-item">
+                                <p className="text-xsmall">
+                                Notice: <br /><br />
+                                <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money
+                                    laundring measures.</b> <br /><br />
+                                The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
+                                Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
+                                </p>
+                            </li>
                             <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
                         </ul>
                     </div>
