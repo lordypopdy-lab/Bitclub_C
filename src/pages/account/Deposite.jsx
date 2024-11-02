@@ -579,14 +579,14 @@ const Deposite = () => {
                         <div className="accent-box-v5 p-0 bg-menuDark" style={{ width: '100%' }}>
                             <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
                                 <div className="mt-12">
-                                    <a href="#" className="text-small"><span style={{ color: '#25C866' }}>Notice:</span></a>
-                                    <p className="mt-4 mb-4">
+                                    <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
+                                    <p className="mt-4 mb-4 text-xsmall">
                                         <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
                                     </p>
-                                    <p className="mt-4">
+                                    <p className="mt-4 text-xsmall">
                                         Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
                                     </p>
-                                    <p className="mt-4">
+                                    <p className="mt-4 text-xsmall">
                                         The minimal deposit is {`${depositInfo.minDeposit} ${depositInfo.symbol.toLocaleUpperCase()}`}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded.
                                     </p>
                                 </div>
