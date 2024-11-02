@@ -597,8 +597,8 @@ const Deposite = () => {
                                     </p>
                                 </div>
                             </a>
-                            <button className="btn btn-small text-light border rounded">Copy Address</button>
-                            <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn btn-small text-dark">Share Address</button>
+                            <button className="btn btn-small m-2 text-light border rounded">Copy Address</button>
+                            <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn m-2 btn-small text-dark">Share Address</button>
                         </div>
                     </div>
 
