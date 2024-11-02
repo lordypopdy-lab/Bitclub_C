@@ -599,7 +599,7 @@ const Deposite = () => {
                             </a>
                         </div>
                         <div className="btn-group">
-                            <button className="btn">Copy Address</button>
+                            <button className="btn text-light border">Copy Address</button>
                             <button data-bs-toggle="modal" data-bs-target="#share" className="btn">Share Address</button>
                         </div>
                     </div>
