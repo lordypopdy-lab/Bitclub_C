@@ -575,7 +575,7 @@ const Deposite = () => {
                                     <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
                                 </InputGroup>
                             </li>
-                            <p className="text-small text-white mt-20">
+                            <p className="text-xsmall text-white mt-20">
                                 Notice: <br /><br />
                                <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money 
                                laundring measures.</b> <br /><br />
