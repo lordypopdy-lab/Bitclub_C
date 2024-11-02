@@ -81,6 +81,7 @@ const Deposite = () => {
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
     const [userAddress, setUserAddress] = useState('');
+    const [depositInfo, setDepositInfo] = {minDeposit: null, symbol: ''}
 
     const [details, setDetails] = useState({
         name: '',
@@ -552,9 +553,9 @@ const Deposite = () => {
 
                 <>
                     <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
-                        <a href="javascript:void(0);" className="left back-btn"><i className="icon-left-btn"></i></a>
+                        <a href="/deposite" className="left back-btn"><i className="icon-left-btn"></i></a>
                         <h3>QR code</h3>
-                        <a href="javascript:void(0);" className="right">Buy Crypto <i class="bi bi-arrow-right p-1"></i></a>
+                        <a href="/buy" className="right">Buy Crypto <i class="bi bi-arrow-right p-1"></i></a>
                     </div>
                     <div className="pt-45 pb-16">
                         <div className="tf-container">
@@ -574,6 +575,13 @@ const Deposite = () => {
                                     <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
                                 </InputGroup>
                             </li>
+                            <p className="text-small mt-20">
+                                Notice: <br />
+                               <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money 
+                               laundring measures.</b> <br />
+                                The minimal deposit is {depositInfo.minDeposit} {depositInfo.symbol.toLocaleUpperCase()}. if your deposit amount is less than the minimal requirement, the funds will not be added to your available balance - nor will be refunded. <br />
+                                Please make sure that the only {depositInfo.symbol.toLocaleUpperCase()}  deposit is made via this address. Otherwise, your deposite funds will not be added to your available balance - nor will be refunded.
+                            </p>
                             <a href="javascript:void(0);" className="tf-btn lg mt-20 primary" data-bs-toggle="modal" data-bs-target="#share">Share Address</a>
                         </ul>
                     </div>
