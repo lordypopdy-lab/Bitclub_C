@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import QRCode from "react-qr-code";
 import toast from 'react-hot-toast';
 import Form from 'react-bootstrap/Form';
 import FadeLoader from 'react-spinners/FadeLoader';
@@ -383,6 +384,23 @@ const Deposite = () => {
         }
     }
 
+    const deposiEth = async () => {
+        const email = localStorage.getItem("email");
+
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/Erc20WalletAuth", { email });
+        if (data.address) {
+            setUserAddress(data.address);
+            setDepositInfo({ symbol: "ETH" });
+            setShowAll(true);
+            console.log(data.address);
+        }
+
+        if (data.error) {
+            toast.error("Error, try reloading!")
+            console.log(data.error);
+        }
+    }
+
     return (
         <>
 
@@ -405,7 +423,7 @@ const Deposite = () => {
                     </div>
                     <div className="pt-55 pb-80">
                         <div className="tf-container">
-                            <h6 style={{marginLeft: "8px"}}>Recomended</h6>
+                            <h6 style={{ marginLeft: "8px" }}>Recomended</h6>
                             <div className="btn-group ">
                                 {chainLists}
                             </div>
@@ -557,44 +575,49 @@ const Deposite = () => {
                     </div>
                     <div className="pt-45 pb-16">
                         <div className="tf-container">
-                            <div className="mt-40 banner-qr">
-                                <img src={bannerqrcode} alt="img" />
+                            <div className="mt-40 text-center mt-1 banner-qr">
+                                <QRCode
+                                    value={userAddress}
+                                    size={200} // Size of the QR code
+                                    level={"H"} // Error correction level: L, M, Q, H
+                                    includeMargin={true} // Optional: adds margin around QR code
+                                />
                             </div>
                         </div>
                         <div className="accent-box-v6 mb-3 bg-dark p-0 " style={{ width: '100%' }}>
                             <a href="#" className="coin-item style-1 gap-12 bg-surface">
-                               
+
                             </a>
                             <div className="mt-12 accent-box-v6 mb-1 bg-dark">
-                            <p className="d-flex align-items-center mb-2 text-small gap-4"><i className="bi bi-link-45deg "></i> Wallet Address </p>
-                                    <p className="mt-4 mb-4 text-xsmall text-light">
-                                        ZGGFKYGAFYGEYFVKEUAYFKEUYFEYFBKYERFKAYE
-                                        <i  className="bi m-2 bi-copy text-primary"></i>
-                                    </p>
+                                <p className="d-flex align-items-center mb-1 text-small gap-4"><i className="bi bi-link-45deg "></i> Wallet Address </p>
+                                <p className="mt-4 mb-4 text-xsmall text-light">
+                                    {userAddress}
+                                    <i onClick={copyAddrress} className="bi m-2 bi-copy text-primary"></i>
+                                </p>
 
-                                    <h6 className="mt-3">Network</h6>
-                                    <p className="text-small bg-secondary rounded p-2 mb-1 mt-1 text-light">
-                                        BTC
-                                    </p>
+                                <h6 className="mt-3">Network</h6>
+                                <p className="text-small bg-secondary rounded p-2 mb-1 mt-1 text-light">
+                                    {depositInfo.symbol}
+                                </p>
 
-                                   <div className="d-flex justify-content-space-between align-items-center">
-                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Minimum Deposit Amount <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
-                                   <h6 style={{right: "4%", position: "absolute"}}>0.00006 BTC</h6>
-                                   </div><hr />
+                                <div className="d-flex justify-content-space-between align-items-center">
+                                    <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Minimum Deposit Amount <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                    <h6 style={{ right: "4%", position: "absolute" }}>0.00006 {depositInfo.symbol}</h6>
+                                </div><hr />
 
-                                   <div className="d-flex justify-content-space-between align-items-center">
-                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Deposit Arrival<i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
-                                   <h6 style={{right: "4%", position: "absolute"}}>1 Comfirmations</h6>
-                                   </div>
-
-                                   <div className="d-flex mt-2 justify-content-space-between align-items-center">
-                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Withdrawal unlocked <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
-                                   <h6 style={{right: "4%", position: "absolute"}}>2 Comfirmations</h6>
-                                   </div>
-
+                                <div className="d-flex justify-content-space-between align-items-center">
+                                    <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Deposit Arrival<i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                    <h6 style={{ right: "4%", position: "absolute" }}>1 Comfirmations</h6>
                                 </div>
+
+                                <div className="d-flex mt-2 justify-content-space-between align-items-center">
+                                    <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Withdrawal unlocked <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                    <h6 style={{ right: "4%", position: "absolute" }}>2 Comfirmations</h6>
+                                </div>
+
+                            </div>
                             <a href="#" className="coin-item style-1 gap-12 bg-surface">
-                                <div style={{marginTop: "-3px"}} className="mt-12 accent-box-v6 mb-1 bg-dark">
+                                <div style={{ marginTop: "-3px" }} className="mt-12 accent-box-v6 mb-1 bg-dark">
                                     <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
                                     <p className="mt-4 mb-4 text-xsmall">
                                         <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
@@ -614,7 +637,7 @@ const Deposite = () => {
                                 </div>
                             </a>
                             <div className="btm-group d-flex justify-content-center align-items-center">
-                                <button type="button" className="btn btn-outline-light m-2 btn-sm text-light"><i className="bi m-1 bi-copy"></i>Copy Address</button>
+                                <button type="button" onClick={copyAddrress} className="btn btn-outline-light m-2 btn-sm text-light"><i className="bi m-1 bi-copy"></i>Copy Address</button>
                                 <button type="button" style={{ background: "#25C866", }} data-bs-toggle="modal" data-bs-target="#share" className="btn m-2 btn-sm"><i className="bi m-1 bi-share-fill"></i>Share Address</button>
                             </div>
                         </div>
@@ -853,7 +876,7 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                            <h6 style={{ marginBottom: "-10px"}} className="text-button text-center mt-4">Choose a Chain Type</h6> <hr />
+                            <h6 style={{ marginBottom: "-10px" }} className="text-button text-center mt-4">Choose a Chain Type</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
                                 <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 bg-surface mb-2 d-flex justify-content-between align-items-center">
                                     <div className="content">
@@ -863,7 +886,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={deposiEth} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
