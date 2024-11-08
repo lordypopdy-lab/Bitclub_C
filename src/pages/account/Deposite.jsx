@@ -66,7 +66,6 @@ import {
     WorkplaceIcon,
 } from "react-share";
 
-
 const Deposite = () => {
     if (!localStorage.getItem('email')) { location.href = '/login'; }
     const [loading, setLoading] = useState(false);
@@ -81,7 +80,7 @@ const Deposite = () => {
     const [chainLists, setChainList] = useState('');
     const [chainList2, setChainList2] = useState('');
     const [userAddress, setUserAddress] = useState('');
-    const [depositInfo, setDepositInfo] = useState({ minDeposit: null, symbol: '', blockComfirmation: '' })
+    const [depositInfo, setDepositInfo] = useState({ minDeposit: null, symbol: '', blockComfirmation: '', })
 
     const [details, setDetails] = useState({
         name: '',
@@ -110,6 +109,7 @@ const Deposite = () => {
             }
         }
         fetcher();
+
         try {
             const tokenGetter = localStorage.getItem('tokens');
             const datas = JSON.parse(tokenGetter);
@@ -286,8 +286,8 @@ const Deposite = () => {
                 return (
                     <>
                         <ul>
-                            <li className="m-2" style={{ listStyleL: "none" }} key={index}>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" className="btn btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                             </li>
                         </ul>
                     </>
@@ -298,8 +298,8 @@ const Deposite = () => {
                 return (
                     <>
                         <ul>
-                            <li className="m-2" style={{ listStyleL: "none" }} key={index}>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" class="btn btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
+                            <li className="m-1" style={{ listStyleL: "none" }} key={index}>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#listChain" className="btn btn-dark rounded text-light">{token.symbol.toLocaleUpperCase()}</button>
                             </li>
                         </ul>
                     </>
@@ -383,7 +383,6 @@ const Deposite = () => {
         }
     }
 
-
     return (
         <>
 
@@ -406,14 +405,14 @@ const Deposite = () => {
                     </div>
                     <div className="pt-55 pb-80">
                         <div className="tf-container">
-                            <h4>Trending</h4>
-                            <div className="btn-group mt-3">
+                            <h6 style={{marginLeft: "8px"}}>Recomended</h6>
+                            <div className="btn-group ">
                                 {chainLists}
                             </div>
                             <div className="btn-group">
                                 {chainList2}
                             </div>
-                            <div className="mt-20">
+                            <div className="mt-10">
                                 <div className="line-bt">
                                     <div className="swiper swiper-wrapper-r market-swiper" data-space-between="20" data-preview="auto">
                                         <div className="swiper-wrapper menu-tab-v3" role="tablist">
@@ -443,7 +442,7 @@ const Deposite = () => {
                                             <a href="/home" className="icon-search"></a>
                                             <input
                                                 type="text"
-                                                placeholder="Swap over 100+ tokens on more than 10 chains"
+                                                placeholder="Search over 100+ tokens on more than 10 chains"
                                                 required
                                                 className="clear-ip"
                                                 value={search}
@@ -550,12 +549,11 @@ const Deposite = () => {
                         </ul>
                     </div>
                 </> :
-
                 <>
                     <div className="header fixed-top bg-surface d-flex justify-content-center align-items-center">
                         <a href="/deposite" className="left back-btn"><i className="icon-left-btn"></i></a>
                         <h3>QR code</h3>
-                        <a href="/buy" className="right">Buy Crypto <i class="bi bi-arrow-right p-1"></i></a>
+                        <a href="/buy" className="right">Buy Crypto <i className="bi bi-arrow-right p-1"></i></a>
                     </div>
                     <div className="pt-45 pb-16">
                         <div className="tf-container">
@@ -563,22 +561,40 @@ const Deposite = () => {
                                 <img src={bannerqrcode} alt="img" />
                             </div>
                         </div>
-                        <ul className="mt-10 accent-box line-border">
-                            <li>
-                                <p className="d-flex align-items-center text-small gap-4">Deposite Address <i className="icon-question fs-16 text-secondary"></i> </p>
-                                <InputGroup className="mb-2 mt-3">
-                                    <Form.Control
-                                        type="text"
-                                        value={userAddress !== null ? userAddress : ''}
-                                        aria-describedby="basic-addon1"
-                                    />
-                                    <InputGroup.Text onClick={copyAddrress} style={{ border: 'none', cursor: 'pointer' }} className='bg-transparent line-border' id="basic-addon1"><i style={{ fontSize: '22px' }} className="icon-copy text-light"></i></InputGroup.Text>
-                                </InputGroup>
-                            </li>
-                        </ul>
-                        <div className="accent-box-v5 p-0 bg-menuDark" style={{ width: '100%' }}>
-                            <a href="/ContractFour" className="coin-item style-1 gap-12 bg-surface">
-                                <div className="mt-12">
+                        <div className="accent-box-v6 mb-3 bg-dark p-0 " style={{ width: '100%' }}>
+                            <a href="#" className="coin-item style-1 gap-12 bg-surface">
+                               
+                            </a>
+                            <div className="mt-12 accent-box-v6 mb-1 bg-dark">
+                            <p className="d-flex align-items-center mb-2 text-small gap-4"><i className="bi bi-link-45deg "></i> Wallet Address </p>
+                                    <p className="mt-4 mb-4 text-xsmall text-light">
+                                        ZGGFKYGAFYGEYFVKEUAYFKEUYFEYFBKYERFKAYE
+                                        <i  className="bi m-2 bi-copy text-primary"></i>
+                                    </p>
+
+                                    <h6 className="mt-3">Network</h6>
+                                    <p className="text-small bg-secondary rounded p-2 mb-1 mt-1 text-light">
+                                        BTC
+                                    </p>
+
+                                   <div className="d-flex justify-content-space-between align-items-center">
+                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Minimum Deposit Amount <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                   <h6 style={{right: "4%", position: "absolute"}}>0.00006 BTC</h6>
+                                   </div><hr />
+
+                                   <div className="d-flex justify-content-space-between align-items-center">
+                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Deposit Arrival<i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                   <h6 style={{right: "4%", position: "absolute"}}>1 Comfirmations</h6>
+                                   </div>
+
+                                   <div className="d-flex mt-2 justify-content-space-between align-items-center">
+                                   <p className="d-flex mt-2 align-items-center text-xsmall gap-4">Withdrawal unlocked <i className="icon-question fs-16 text-xsmall text-secondary"></i> </p>
+                                   <h6 style={{right: "4%", position: "absolute"}}>2 Comfirmations</h6>
+                                   </div>
+
+                                </div>
+                            <a href="#" className="coin-item style-1 gap-12 bg-surface">
+                                <div style={{marginTop: "-3px"}} className="mt-12 accent-box-v6 mb-1 bg-dark">
                                     <a href="#" className="text-xsmall"><span style={{ color: '#25C866' }}>Notice:</span></a>
                                     <p className="mt-4 mb-4 text-xsmall">
                                         <b> In upholding the integrity and safety of our platform's trading enviroment, Bitclub is dedicated to combating financial crime and ensuring adherence to anti-money laundring measures.</b>
@@ -597,14 +613,12 @@ const Deposite = () => {
                                     </p>
                                 </div>
                             </a>
-                           <div className="btn-group">
-
-                           <button className="btn btn-sm m-2 text-light border rounded">Copy Address</button>
-                            <button style={{background: "#25C866"}} data-bs-toggle="modal" data-bs-target="#share" className="btn btn-sm m-2 text-dark">Share Address</button>
+                            <div className="btm-group d-flex justify-content-center align-items-center">
+                                <button type="button" className="btn btn-outline-light m-2 btn-sm text-light"><i className="bi m-1 bi-copy"></i>Copy Address</button>
+                                <button type="button" style={{ background: "#25C866", }} data-bs-toggle="modal" data-bs-target="#share" className="btn m-2 btn-sm"><i className="bi m-1 bi-share-fill"></i>Share Address</button>
+                            </div>
                         </div>
-                           </div>
                     </div>
-
 
                     {/* <!-- Share Links --> */}
                     <div className="modal fade modalRight" id="share">
@@ -839,9 +853,9 @@ const Deposite = () => {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="box-detail-chart">
-                            <h6 style={{ marginBottom: "-14px" }} className="text-button mt-4 text-center">Choose Network</h6> <hr />
+                            <h6 style={{ marginBottom: "-10px"}} className="text-button text-center mt-4">Choose a Chain Type</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 bg-surface mb-3 d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 bg-surface mb-2 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -849,7 +863,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -857,7 +871,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-3 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -865,8 +879,8 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <p className="accent-box-v6 mb-3 bg-dark d-flex justify-content-between align-items-center">
-                                    <span className="icon-warning icon"></span>
+                                <p className="accent-box-v6 mb-3 bg-dark">
+                                    <i className="bi text-warning m-1 bi-exclamation-circle"></i>
                                     Please note that only supported networks on Bitblub platform are shown, if you deposit via another Network your assets may lost.
                                 </p>
                             </div>
