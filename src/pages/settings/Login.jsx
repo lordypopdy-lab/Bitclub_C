@@ -38,6 +38,7 @@ try {
 }
 fetcher();
 }, [])
+
 gapi.load('client:auth2', () => {
 window.gapi.client.init({
     clientId: '170268353832-0fn4qbgklemeb9s0o5elvi99ronia9ov.apps.googleusercontent.com',
@@ -45,6 +46,7 @@ window.gapi.client.init({
     scope: 'email'
 })
 })
+
 const loginUser = async (e) => {
 e.preventDefault();
 setLoading(true);

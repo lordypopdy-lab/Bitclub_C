@@ -7,6 +7,7 @@ import FadeLoader from 'react-spinners/FadeLoader';
 import InputGroup from 'react-bootstrap/InputGroup';
 import bannerqrcode from "../../images/banner/bannerqrcode.png"
 
+
 import logo144 from '../../images/logo/logo144.png';
 import coin1 from "../../images/coin/coin1.jpg";
 import coin2 from "../../images/coin/coin2.jpg";
@@ -66,6 +67,7 @@ import {
     WhatsappIcon,
     WorkplaceIcon,
 } from "react-share";
+
 
 const Deposite = () => {
     if (!localStorage.getItem('email')) { location.href = '/login'; }
@@ -391,6 +393,42 @@ const Deposite = () => {
         if (data.address) {
             setUserAddress(data.address);
             setDepositInfo({ symbol: "ETH" });
+            setShowAll(true);
+            console.log(data.address);
+        }
+
+        if (data.error) {
+            toast.error("Error, try reloading!")
+            console.log(data.error);
+        }
+    }
+
+    const depositBtc = async () => {
+
+        const email = localStorage.getItem("email");
+
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email });
+        if (data.address) {
+            setUserAddress(data.address);
+            setDepositInfo({ symbol: "BTC" });
+            setShowAll(true);
+            console.log(data.address);
+        }
+
+        if (data.error) {
+            toast.error("Error, try reloading!")
+            console.log(data.error);
+        }
+    }
+
+    const depositBNB = async () => {
+
+        const email = localStorage.getItem("email");
+
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BNBWalletAuth", { email });
+        if (data.address) {
+            setUserAddress(data.address);
+            setDepositInfo({ symbol: "BNB" });
             setShowAll(true);
             console.log(data.address);
         }
@@ -878,7 +916,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                             <h6 style={{ marginBottom: "-10px" }} className="text-button text-center mt-4">Choose a Chain Type</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 bg-surface mb-2 d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={depositBtc} className="accent-box-v6 bg-surface mb-2 d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -894,7 +932,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={(() => { setShowAll(true) })} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={depositBNB} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
                                     <div className="content">
                                         <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
