@@ -91,7 +91,7 @@ if (email_verified) {
         localStorage.setItem('email', email);
         localStorage.setItem('pin', data._id);
         setTimeout(() => {
-            location.href = '/Home'
+            location.href = '/Home';
         }, 1000);
     } else {
         toast.error("Login Error");
