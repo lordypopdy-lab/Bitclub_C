@@ -387,6 +387,7 @@ const Deposite = () => {
     }
 
     const deposiEth = async () => {
+        setLoading(true);
         const email = localStorage.getItem("email");
 
         const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/Erc20WalletAuth", { email });
@@ -395,16 +396,18 @@ const Deposite = () => {
             setDepositInfo({ symbol: "ETH" });
             setShowAll(true);
             console.log(data.address);
+            setLoading(false);
         }
 
         if (data.error) {
             toast.error("Error, try reloading!")
             console.log(data.error);
+            setLoading(false)
         }
     }
 
     const depositBtc = async () => {
-
+        setLoading(true);
         const email = localStorage.getItem("email");
 
         const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email });
@@ -413,16 +416,18 @@ const Deposite = () => {
             setDepositInfo({ symbol: "BTC" });
             setShowAll(true);
             console.log(data.address);
+            setLoading(false)
         }
 
         if (data.error) {
             toast.error("Error, try reloading!")
             console.log(data.error);
+            setLoading(false)
         }
     }
 
     const depositBNB = async () => {
-
+        setLoading(true);
         const email = localStorage.getItem("email");
 
         const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BNBWalletAuth", { email });
@@ -431,11 +436,13 @@ const Deposite = () => {
             setDepositInfo({ symbol: "BNB" });
             setShowAll(true);
             console.log(data.address);
+            setLoading(false);
         }
 
         if (data.error) {
             toast.error("Error, try reloading!")
             console.log(data.error);
+            setLoading(false);
         }
     }
 
@@ -916,7 +923,7 @@ const Deposite = () => {
                         <div className="box-detail-chart">
                             <h6 style={{ marginBottom: "-10px" }} className="text-button text-center mt-4">Choose a Chain Type</h6> <hr />
                             <div className="bottom" style={{ marginTop: '-20px' }}>
-                                <a href="#" onClick={depositBtc} className="accent-box-v6 bg-surface mb-2 d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={depositBtc} className="accent-box-v6  bg-surface mb-2 d-flex justify-content-between align-items-center" data-bs-dismiss="modal">
                                     <div className="content">
                                         <span className="text-small">Bitcoin</span>
                                         <p className="text-extra-small text-secondary">1 block comfirmation</p>
@@ -924,7 +931,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 41 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={deposiEth} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={deposiEth} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center" data-bs-dismiss="modal">
                                     <div className="content">
                                         <span className="text-small">Ethereum (ERC20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
@@ -932,7 +939,7 @@ const Deposite = () => {
                                         <p className="text-extra-small text-secondary">Est. arrival 4 mins</p>
                                     </div>
                                 </a>
-                                <a href="#" onClick={depositBNB} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center">
+                                <a href="#" onClick={depositBNB} className="accent-box-v6 mb-2 bg-surface d-flex justify-content-between align-items-center" data-bs-dismiss="modal">
                                     <div className="content">
                                         <span className="text-small">BNB Smart Chain (BEP20)</span>
                                         <p className="text-extra-small text-secondary">6 block comfirmation</p>
