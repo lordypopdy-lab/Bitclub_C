@@ -390,7 +390,12 @@ const Deposite = () => {
         setLoading(true);
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/Erc20WalletAuth", { email });
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/Erc20WalletAuth", { email },{
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        });
         if (data.address) {
             setUserAddress(data.address);
             setDepositInfo({ symbol: "ETH" });
@@ -411,7 +416,12 @@ const Deposite = () => {
       try {
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email });
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email },{
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        });
         if (data.address) {
             setUserAddress(data.address);
             setDepositInfo({ symbol: "BTC" });
@@ -436,7 +446,12 @@ const Deposite = () => {
         setLoading(true);
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BNBWalletAuth", { email });
+        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BNBWalletAuth", { email },{
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        });
         if (data.address) {
             setUserAddress(data.address);
             setDepositInfo({ symbol: "BNB" });

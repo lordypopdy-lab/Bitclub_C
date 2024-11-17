@@ -55,6 +55,11 @@ const Login = () => {
             const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/login', {
                 email,
                 password
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                withCredentials: true,
             })
             if (!data.error) {
                 setData({});
