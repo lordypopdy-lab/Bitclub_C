@@ -66,7 +66,7 @@ import { useEffect } from 'react';
 import { UserContextProvider } from '../context/UserContext';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-axios.defaults.baseURL = 'https://bitclubs4-8hol7zph.b4a.run/';
+axios.defaults.baseURL = 'https://bitclubs4-8hol7zph.b4a.run ';
 axios.defaults.withCredentials = true;
 
 import '../src/fonts/fonts.css';
