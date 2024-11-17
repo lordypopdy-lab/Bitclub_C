@@ -408,6 +408,7 @@ const Deposite = () => {
 
     const depositBtc = async () => {
         setLoading(true);
+      try {
         const email = localStorage.getItem("email");
 
         const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email });
@@ -421,9 +422,14 @@ const Deposite = () => {
 
         if (data.error) {
             toast.error("Error, try reloading!")
-            console.log(data.error);
+            console.log(error);
             setLoading(false)
         }
+      } catch (error) {
+        setLoading(false);
+        console.log(error);
+        toast.error("Error, Creating BTC Address try reloading!");
+      }
     }
 
     const depositBNB = async () => {

@@ -60,11 +60,14 @@ import WithdrawContractTwo from './pages/TRX/WithdrawContractTwo';
 import WithdrawContractOne from './pages/TRX/WithdrawContractOne';
 import ContractTwoProfile from './pages/account/ContractTwoProfile';
 
+import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { UserContextProvider } from '../context/UserContext';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+axios.defaults.baseURL = 'https://bitclubs4-8hol7zph.b4a.run/';
+axios.defaults.withCredentials = true;
 
 import '../src/fonts/fonts.css';
 import '../src/fonts/font-icons.css';
