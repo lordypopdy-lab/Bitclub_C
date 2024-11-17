@@ -89,12 +89,12 @@ const Login = () => {
                         email,
                         name,
                         picture
-                    },{
-                        headers: {
-                          'Content-Type': 'application/json',
-                        },
-                        withCredentials: true, 
-                      });
+                    }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    withCredentials: true,
+                });
                 if (data) {
                     toast.success("Login Successfully, Welcome!");
                     setLoading(false)
