@@ -52,7 +52,7 @@ const Login = () => {
         setLoading(true);
         const { email, password } = data;
         try {
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/login', {
+            const { data } = await axios.post('/login', {
                 email,
                 password
             },{
@@ -89,7 +89,7 @@ const Login = () => {
 
         try {
             if (email_verified) {
-                const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle',
+                const { data } = await axios.post('/loginGoogle',
                     {
                         email,
                         name,

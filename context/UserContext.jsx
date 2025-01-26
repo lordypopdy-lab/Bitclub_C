@@ -10,7 +10,7 @@ export function UserContextProvider({ children }) {
                 const email = localStorage.getItem('email');
                 const pin = localStorage.getItem('pin');
                 if (email && pin) {
-                    axios.post('https://bitclubs4-8hol7zph.b4a.run/profile', { email, pin }).then(({ data }) => {
+                    axios.post('https://bitclubserver.vercel.app/profile', { email, pin }).then(({ data }) => {
                         if (data.error) {
                             console.log(data.error);
                             localStorage.removeItem('pin');

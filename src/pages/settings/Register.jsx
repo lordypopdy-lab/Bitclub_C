@@ -24,7 +24,7 @@ e.preventDefault();
 setLoading(true)
 const { name, email, password, comfirmPassword } = data;
 try {
-const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/register', {
+const { data } = await axios.post('/register', {
     name, email, password, comfirmPassword
 })
 if (data.error) {
@@ -60,7 +60,7 @@ const { email, name, picture, email_verified } = decoded
 
 try {
     if (email_verified) {
-        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/loginGoogle', { email, name, picture });
+        const { data } = await axios.post('/loginGoogle', { email, name, picture });
         if (data) {
             toast.success("Login Successfully, Welcome!");
             setLoading(false)

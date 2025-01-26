@@ -74,7 +74,7 @@ setLoading(true);
 const getNotification = async () => {
 const email = localStorage.getItem('email');
 try {
-axios.post('https://bitclubs4-8hol7zph.b4a.run/getNotification', { email }).then(({ data }) => {
+axios.post('/getNotification', { email }).then(({ data }) => {
     const datas = data.notificationList.reverse()
     const NotificationList = datas.map((data, index) => {
         const time = data.timestamp;
@@ -333,7 +333,7 @@ connectMetaMask();
 const getHistory = async () => {
     const email = localStorage.getItem('email');
     try {
-        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getHistory', { email });
+        const { data } = await axios.post('/getHistory', { email });
         const datas  = data.historyList.reverse();
         if (datas) {
             const historyList = datas.map((history, index) => {
