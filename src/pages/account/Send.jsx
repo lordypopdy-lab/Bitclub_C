@@ -51,7 +51,7 @@ fetcher();
 
 const pinCheck = async () => {
     const email = localStorage.getItem('email');
-    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinCheck', { email });
+    const { data } = await axios.post('/pinCheck', { email });
     if (data.exists == true) {
         setCheckPin(true);
     }
@@ -237,7 +237,7 @@ const SendEther = async (e) => {
             toast.error('Enter Value to Send')
         } else {
             const { pin1, pin2, pin3, pin4 } = pinInput;
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/pinVerify', {
+            const { data } = await axios.post('/pinVerify', {
                 pin1, pin2, pin3, pin4, email
             });
             if (data.success) {
@@ -259,7 +259,7 @@ const SendEther = async (e) => {
                         const transactionHash = receipt.transactionHash;
 
                         const For = 'sendSuccess';
-                        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For, valueSend, amount });
+                        const { data } = await axios.post('/notification', { email, For, valueSend, amount });
                         if (data.success) {
                             setTrxH({
                                 to: to,
@@ -306,7 +306,7 @@ const createPin = async (e) => {
     const email = localStorage.getItem('email');
     const { pin1, pin2, pin3, pin4 } = pinInput;
 
-    const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/createPin', {
+    const { data } = await axios.post('/createPin', {
         pin1, pin2, pin3, pin4, email
     })
 

@@ -390,7 +390,7 @@ const Deposite = () => {
         setLoading(true);
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/Erc20WalletAuth", { email },{
+        const { data } = await axios.post("/Erc20WalletAuth", { email },{
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -416,7 +416,7 @@ const Deposite = () => {
       try {
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BtcWalletAuth", { email },{
+        const { data } = await axios.post("/BtcWalletAuth", { email },{
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -446,7 +446,7 @@ const Deposite = () => {
         setLoading(true);
         const email = localStorage.getItem("email");
 
-        const { data } = await axios.post("https://bitclubs4-8hol7zph.b4a.run/BNBWalletAuth", { email },{
+        const { data } = await axios.post("/BNBWalletAuth", { email },{
             headers: {
                 'Content-Type': 'application/json',
             },

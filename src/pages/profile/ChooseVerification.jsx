@@ -46,11 +46,11 @@ if (Id == null || Country == null) {
     toast.error("Type of identification (ID) and Country is required")
 } else {
     const email = localStorage.getItem('email');
-    axios.post('https://bitclubs4-8hol7zph.b4a.run/userInfo', { email, Id, Country }).then(({ data }) => {
+    axios.post('/userInfo', { email, Id, Country }).then(({ data }) => {
         console.log(data)
         const For = 'IDverification';
         if (data.message == 'success') {
-            axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
+            axios.post('/notification', { email, For }).then(() => {
                 toast.success("Saved");
                 setLoading(false);
                 setTimeout(() => {
@@ -58,7 +58,7 @@ if (Id == null || Country == null) {
                 }, 1000);
             })
         } else if (data.message == 'Updated') {
-            axios.post('https://bitclubs4-8hol7zph.b4a.run/notification', { email, For }).then(() => {
+            axios.post('/notification', { email, For }).then(() => {
                 toast.success('Updated');
                 setLoading(false);
                 setTimeout(() => {

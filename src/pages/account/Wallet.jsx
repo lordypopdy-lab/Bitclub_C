@@ -32,7 +32,7 @@ const Wallet = () => {
         const getNotification = async () => {
             const email = localStorage.getItem('email');
             try {
-                axios.post('https://bitclubs4-8hol7zph.b4a.run/getNotification', { email }).then(({ data }) => {
+                axios.post('/getNotification', { email }).then(({ data }) => {
                     const datas = data.notificationList.reverse();
                     const NotificationList = datas.map((data, index) => {
                         const time = data.timestamp;
@@ -155,7 +155,7 @@ const Wallet = () => {
                 const getHistory = async () => {
                     const email = localStorage.getItem('email');
                     try {
-                        const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getHistory', { email });
+                        const { data } = await axios.post('/getHistory', { email });
                         const datas = data.historyList.reverse();
                         if (data) {
                             const historyList = datas.map((history, index) => {
@@ -203,7 +203,7 @@ const Wallet = () => {
     const toContractOne = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractOne', { email });
+            const { data } = await axios.post('/getContractOne', { email });
             if (data.success && data.contractOne.status !== 'Paused') {
                 setLoading(false);
                 location.href = '/ContractOneProfile'
@@ -220,7 +220,7 @@ const Wallet = () => {
     const toContractTwo = async () => {
         const email = localStorage.getItem('email');
         try {
-            const { data } = await axios.post('https://bitclubs4-8hol7zph.b4a.run/getContractTwo', { email });
+            const { data } = await axios.post('/getContractTwo', { email });
             if (data.success && data.contractOne.status !== 'Paused') {
                 setLoading(false);
                 location.href = '/ContractTwoProfile'
@@ -275,7 +275,7 @@ if (!localStorage.getItem('email')) { location.href = '/login'; }
                                 </a>
                             </li>
                             <li>
-                                <a href="/AddressScan" className="tf-list-item d-flex flex-column gap-8 align-items-center">
+                                <a href="/deposite" className="tf-list-item d-flex flex-column gap-8 align-items-center">
                                     <span className="box-round bg-surface d-flex justify-content-center align-items-center"><i className="icon icon-way2"></i></span>
                                     Receive
                                 </a>

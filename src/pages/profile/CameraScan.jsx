@@ -24,7 +24,7 @@ try {
 const submit = async ()=>{
 const email = localStorage.getItem('email');
 try {
-    axios.post('https://bitclubs4-8hol7zph.b4a.run/citizenId', {email, imgSrc}).then(({data})=>{
+    axios.post('/citizenId', {email, imgSrc}).then(({data})=>{
         if(data.success){
             location.href = '/CameraSuccess'
         }else{
